@@ -1,0 +1,9 @@
+.carousel-img{
+    height: 450px;
+}
+.carousel-control-prev{
+    color: white;
+}
+.bi-chevron-double-left, .bi-chevron-double-right{
+    font-size: 70px;
+}

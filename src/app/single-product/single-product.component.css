@@ -1,0 +1,19 @@
+.price {
+    color: red;
+    font-size: 40px;
+}
+.card-text, .card-title{
+    margin-left: 10px;
+    
+}
+.text-description{
+    text-align: justify;
+    padding-right: 15px;
+}
+.card-img{
+    padding: 50px;
+}
+.card{
+    width: 350px;
+    margin: 20px;
+}

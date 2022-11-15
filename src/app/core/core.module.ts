@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
+import { CarrouselComponent } from './carrousel/carrousel.component';
+import { PubliciteComponent } from './components/publicite/publicite.component';
 
 
 
@@ -10,11 +12,13 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    CarrouselComponent,
+    PubliciteComponent,
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, CarrouselComponent, PubliciteComponent]
 })
 export class CoreModule { }

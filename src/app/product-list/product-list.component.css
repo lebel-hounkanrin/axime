@@ -1,6 +1,9 @@
 .product-list{
     display: flex;
+    flex-wrap: wrap;
+    width: 75%;
 }
-.product{
-    margin: 15px
+.publicite{
+    display: flex;
+    margin-top: 50px;
 }
