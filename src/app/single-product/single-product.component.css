@@ -1,5 +1,5 @@
 .price {
-    color: red;
+    color: rgba(231, 76, 60,1.0);
     font-size: 40px;
 }
 .card-text, .card-title{
@@ -16,4 +16,5 @@
 .card{
     width: 350px;
     margin: 20px;
+    border: none;
 }

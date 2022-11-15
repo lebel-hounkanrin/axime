@@ -1,0 +1,23 @@
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-footer{
+    margin-left: 600px;
+    margin-right: 600px;
+}
+.sub-footer i{
+    font-size: 60px;
+}
+.footer{
+    background-color: #2ecc71;
+}
+ul{
+    margin-top: 3px;
+    padding-bottom: 0;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}

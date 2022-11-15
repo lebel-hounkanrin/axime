@@ -7,3 +7,16 @@
     display: flex;
     margin-top: 50px;
 }
+.btn{
+    margin-left: 750px;
+    border: 1px solid white;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 30px;
+    padding: 10px;
+}
+.btn:hover{
+    color: white;
+    background-color: #2ecc71;
+}
