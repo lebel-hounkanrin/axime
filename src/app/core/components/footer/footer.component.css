@@ -2,19 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.sub-footer{
     margin-left: 600px;
     margin-right: 600px;
 }
+.sub-footer{
+    width: 100%;
+    background-color: rgba(52, 152, 219, 0.75);
+}
 .sub-footer i{
     font-size: 30px;
+    color: white;
 }
 .footer{
-    background-color: #487eb0;
+    background-color: #3498db;
 }
 ul{
-    margin-top: 3px;
+    
     padding-bottom: 0;
     height: 300px;
     display: flex;

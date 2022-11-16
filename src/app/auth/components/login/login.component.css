@@ -32,12 +32,14 @@ button{
     border-radius: 20px;
 }
 .login-button{
-    background-color: #487eb0;
+    background-color: #3498db;
     color: white;
+    border: none;
 }
 .registration-button {
-    color: #487eb0;
+    color: #3498db;
     background-color: white;
+    border: none;
 }
 p {
     text-align: right;
@@ -50,7 +52,6 @@ p {
     flex-direction: column;
     margin: 10px auto 50px ; 
     width: 30%;
-    border: none;
     padding: 10px 0px;
 }
 h4{
