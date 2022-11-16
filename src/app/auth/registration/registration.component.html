@@ -14,7 +14,13 @@
     </div>
     <div class="form-group">
         <label for="country"><small>Pays</small></label>
-        <input type="text" id="country">
+        <select name="pays" id="id">
+            <option value="benin">Bénin</option>
+        </select>
+    </div>
+    <div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
+        <span class="drop-button"><i class="bi bi-download"></i></span>
+        <p>Une photo de votre piece d'identité</p>
     </div>
     <div >
         <button class="login-button">Créer mon compte</button>
