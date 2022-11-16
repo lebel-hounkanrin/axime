@@ -1,16 +1,68 @@
-.toolbar {
-    width: 100%;
+.header {
+    display: flex;
     background-color: #2ecc71;
-    color: white;
-    margin: 0;
+    height: 90px;
+    justify-content: space-between;
+    align-items: center;
 }
-.toolbar input {
-    margin-top: 10px;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 15px;
-}
-.toolbar a{
+.header a{
     text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+#searchbar{
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    width: 700px;
+    height: 80px;
+    border: 1px solid #2ecc71;
+    font-size: 1.5em;
+}
+
+#searchbar button {
+    height: 52px;
+    background-color: white;
+    border-left: 1px solid white;
+    padding-left: O ;
+    border-radius: 0px 10px 10px 0px;
+    border-color: white;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    height: 90%;
+    border: 1px solid #2ecc71;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0;
+    border-color: white;
+}
+.header-title{
+    color: white;
+    margin-left: 15px;
+}
+.header-link{
+   display: flex;
+   justify-content: space-between; 
+   margin-right: 20px;
+}
+#header-link-elt-1 {
+    margin-right: 20px;
+}
+
+#header-link-elt-2 {
+    margin-left: 50px;
+}
+.bi-search{
+   font-size: 28px;
+}
+.bi-cart3{
+    font-size: 28px;
+    color: white;
+}
+.bi-person{
+    font-size: 29px;
     color: white;
 }

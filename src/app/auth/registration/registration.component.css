@@ -31,3 +31,8 @@ button {
     display: block;
     margin: 20px auto;
 }
+
+.form-card p a {
+    text-decoration: none;
+    color: #161515;
+}
