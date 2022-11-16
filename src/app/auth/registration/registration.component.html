@@ -1,28 +1,30 @@
 <div class="form">
     <h4 class="mb-4">Nouveau client ?</h4>
     <div class="form-group">
-        <label for="numero"><small>Numéro de telephone</small></label>
-        <select name="pays" id="id">
-            <option value="benin">Bénin +229</option>
-        </select>
-        <input type="tel" id="numero">
+        <label for="numero">Numéro de telephone</label>
+        <div class="country-options">
+            <select name="pays" id="id">
+                <option value="benin">(00229)</option>
+                <option value="civ" >(00225)</option>
+                <option value="civ" >(00226)</option>
+                <option value="civ" >(00227)</option>
+                <option value="civ" >(00228)</option>
+                <option value="civ" >(00221)</option>
+            </select>
+            <input type="tel" id="numero">
+        </div>
     </div>
     <div class="form-group">
-        <label for="password"><small>Mot de passe</small></label>
-        <input type="password" id="password" value="password">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" value="passwordpassword">
     </div>
     <div class="form-group">
-        <label for="confirm-password"><small>Confirmer votre mot de passe</small></label>
-        <input type="password" id="confirm-password" value="password">
-    </div>
-    <div class="form-group">
-        <label for="country"><small>Pays</small></label>
-        <select name="pays" id="id">
-            <option value="benin">Bénin</option>
-        </select>
+        <label for="confirm-password">Confirmer votre mot de passe</label>
+        <input type="password" id="confirm-password" value="passwordpassword">
     </div>
     <div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
-        <span class="drop-button"><i class="bi bi-download"></i></span>
+        <span class="drop-button"><i class="bi bi-download"></i>
+        </span>
         <p>Une photo de votre piece d'identité</p>
     </div>
     <div >
