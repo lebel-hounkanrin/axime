@@ -1,8 +1,30 @@
-<div class="form-card">
+<div class="form">
+    <h4 class="mb-4">Déjà client ?</h4>
+    <div class="form-group">
+        <label for="numero"><small>Numéro de telephone</small></label>
+        <input type="text" id="numero">
+    </div>
+    <div class="form-group">
+        <label for="password"><small>Mot de passe</small></label>
+        <input type="password" id="password">
+    </div>
+    <div >
+        <button class="login-button">Connexion</button>
+    </div>
+    <p><a href="">Mot de passe oublié ?</a></p>
+</div>
+<div class="registration-card">
+    <h4 class="mb-4">Nouveau client ?</h4>
+    <div >
+        <button class="registration-button" (click)="goToRegistrationPage()">S'inscrire</button>
+    </div>
+</div>
+
+<!--div class="form-card">
     <h2>Connexion</h2>
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" id="email">
+        <label for="numero">Numéro de telephone</label>
+        <input type="text" id="numero">
     </div>
     <div class="form-group">
         <label for="password">Mot de passe</label>
@@ -12,4 +34,4 @@
         <button>Connexion</button>
     </div>
     <p>Vous n'aviez pas encore un compte ? <a href="signup">S'inscrire</a></p>
-</div>
+</div-->

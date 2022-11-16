@@ -43,6 +43,9 @@ input {
     margin-right: 0;
     border-color: white;
 }
+input:focus {
+    outline: none;
+}
 .header-title{
     color: white;
     margin-left: 15px;
