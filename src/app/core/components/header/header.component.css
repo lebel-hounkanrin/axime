@@ -30,6 +30,10 @@
     border-color: white;
 }
 
+#searchbar button:hover{
+    background-color: #d1d8e0;
+ }
+
 input {
     padding: 10px;
     width: 100%;
@@ -55,13 +59,16 @@ input {
 #header-link-elt-2 {
     margin-left: 50px;
 }
+
 .bi-search{
    font-size: 28px;
 }
+
 .bi-cart3{
     font-size: 28px;
     color: white;
 }
+
 .bi-person{
     font-size: 29px;
     color: white;
