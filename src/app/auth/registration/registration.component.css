@@ -44,13 +44,28 @@ button{
     background-color: #3498db;
     color: white;
     border: none;
-
 }
+
+.login-button:hover{
+    background-color: rgba(52, 152, 219,0.40);
+    color: white;
+    border: none;
+}
+
+
 .registration-button {
     color: #3498db;
     background-color: white;
     border-color: #3498db;
+    border: 1px solid #3498db;
 }
+
+.registration-button:hover {
+    color: white;
+    background-color: #3498db;
+    border-color: white;
+}
+
 p {
     
     margin-right: 10px;
