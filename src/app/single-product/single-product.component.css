@@ -1,6 +1,6 @@
 .price {
     color: rgba(231, 76, 60,1.0);
-    font-size: 40px;
+    font-size: 25px;
 }
 .card-text, .card-title{
     margin-left: 10px;
@@ -11,10 +11,15 @@
     padding-right: 15px;
 }
 .card-img{
-    padding: 50px;
+    padding: 40px;
 }
 .card{
-    width: 350px;
-    margin: 20px;
+    width: 320px;
+    margin: 10px;
     border: none;
+    border-radius: 3px;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 5px 5px #dcdde1;
 }
