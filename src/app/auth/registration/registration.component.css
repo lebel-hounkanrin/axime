@@ -1,6 +1,13 @@
 *{
     box-sizing: border-box;
 }
+
+.logo {
+    margin-left: 145px;
+    color: #3498db;
+    font-size: 30px;
+}
+
 .form {
     box-sizing: border-box;
     background-color: white;
@@ -9,7 +16,7 @@
     margin: 50px auto 10px;
     width: 30%;
     border: none;
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 .form-group {
     display: flex;
@@ -24,7 +31,7 @@ input, select{
     border: 1px solid #b6c2cd;
     background-color: #EFEFEF;
     outline: 0;
-    height: 55px;
+    height: 40px;
     margin-left: 25px;
     border-radius: 5px;
 }
@@ -34,11 +41,12 @@ input:hover, select:hover{
 }
 label{
   margin-left: 25px;
+  color: #3498db;
 }
 button{
     padding: 5px;
     border-radius: 20px;
-    height: 55px;
+    height: 50px;
 }
 .login-button{
     background-color: #3498db;
@@ -75,19 +83,22 @@ p {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
-    margin: 10px auto 50px ; 
+    margin: 10px auto 10px ; 
     width: 30%;
     border: none;
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
+
 h4{
     margin-left: 25px;
+    font-size: 18px;
 }
+
 .drop{
-    margin: 50px auto 50px;
-    width: 300px;
-    height: 300px;
-    border: 5px dashed black;
+    margin: 30px auto 40px;
+    width: 350px;
+    height: 200px;
+    border: 5px dashed #3498db;
     border-radius: 10%;
     padding-bottom: 10px;
     display: flex;
@@ -99,15 +110,17 @@ h4{
 }
 .drop p{
     font-size: 1em;
+    color: #3498db;
 }
 .drop i {
     margin: auto;
     font-size: 50px;
+    color: #3498db;
 }
 .drop-button{
     padding-bottom: 10px;
     width: 70px;
-    margin-top: 75px;
+    margin-top: 40px;
 }
 .country-options{
     display: flex;

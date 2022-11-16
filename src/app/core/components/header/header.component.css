@@ -1,28 +1,27 @@
 .header {
     display: flex;
     background-color: #3498db;
-    height: 90px;
+    height: 70px;
     justify-content: space-between;
     align-items: center;
 }
 .header a{
     text-decoration: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 #searchbar{
     display: flex;
     padding: 10px;
-    margin-top: 10px;
     width: calc(80% - 250px) ;
-    height: 80px;
+    height: 64.5px;
     border: none;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #searchbar button {
-    height: 54px;
+    height: 40px;
     background-color: white;
     border-left: none;
     padding-left: O ;
@@ -64,7 +63,7 @@ input:focus {
 }
 
 .bi-search{
-   font-size: 28px;
+   font-size: 21px;
 }
 
 .bi-cart3{
