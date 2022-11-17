@@ -16,11 +16,36 @@
 .footer{
     background-color: #3498db;
 }
+
+.title-infos-footer{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bloc-infos-footer{
+    font-size: 14px;
+}
+
+a{
+    color: white;
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
 ul{
     
     padding-bottom: 0;
-    height: 250px;
+    height: 200px;
     display: flex;
     justify-content: space-around;
     list-style: none;
+}
+
+li{
+    margin-top: 30px;
+    color: white;
 }
