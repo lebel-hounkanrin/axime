@@ -1,7 +1,8 @@
 <div class="publicite">
     <app-publicite></app-publicite>
     <div class="product-list">
-        <app-single-product *ngFor="let i of [1, 2, 3, 4, 5, 6]"></app-single-product>
+        <app-single-product *ngFor="let product of products" [product]="product"
+        (addToCart)="onAddToCart(product)"></app-single-product>
     </div>
 </div>
 <button class="btn">Voir plus d'offres</button>

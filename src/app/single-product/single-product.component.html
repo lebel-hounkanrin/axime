@@ -1,6 +1,10 @@
-<div class="card ">
+<div class="card" >
     <img src="../../assets/images/product.webp" class="card-img" alt="...">
-      <h3 class="card-title">Card title</h3>
-      <p class="card-text text-description">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text price pb-2">2000 FCFA</p>
+      <h3 class="card-title">{{product.title}}</h3>
+      <p class="card-text text-description">{{product.description}}</p>
+      <p class="card-text price pb-2">
+        <span class="product-price">{{product.price}} FCFA</span>
+        <span><button class="addProductBtn" (click)="addProductToBasket(product)">Ajouter au panier</button></span>  
+      </p>
+      
   </div>

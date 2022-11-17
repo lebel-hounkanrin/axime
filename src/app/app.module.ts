@@ -1,3 +1,4 @@
+import { BASKET_STORE_PROVIDERS } from './core/services/basket.providers';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { MainComponent } from './main/main.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { CategorieListComponent } from './categorie-list/categorie-list.component';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { CategorieListComponent } from './categorie-list/categorie-list.componen
     SingleProductComponent,
     MainComponent,
     CategorieComponent,
-    CategorieListComponent
+    CategorieListComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { CategorieListComponent } from './categorie-list/categorie-list.componen
     AuthModule,
     SharedModule
   ],
-  providers: [],
+  providers: [BASKET_STORE_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
