@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form" [formGroup]="registrationForm">
     <h3 class="logo" > Achagro </h3>
     <h4 class="mb-4">Nouveau client ?</h4>
     <div class="form-group">
@@ -16,6 +16,14 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="proprietaire">Choisir votre statut</label>
+        <select name="proprietaire" id="proprietaire" formControlName="proprietaireCtrl">
+            <option value="particulier">Particulier</option>
+            <option value="restaurant" >Restaurant</option>
+            <option value="comerçant" >Commerçant</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="password">Mot de passe</label>
         <input type="password" id="password" value="passwordpassword">
     </div>
@@ -26,10 +34,10 @@
     <div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
         <span class="drop-button"><i class="bi bi-download"></i>
         </span>
-        <p>Une photo de votre piece d'identité</p>
+        <p>{{piecedIdentiteMsg}}</p>
     </div>
     <div >
-        <button class="login-button">Créer mon compte</button>
+        <button class="login-button" type="submit" (click)="onSubmitForm()">Créer mon compte</button>
     </div>
 </div>
 <div class="registration-card">
