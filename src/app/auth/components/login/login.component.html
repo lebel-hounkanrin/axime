@@ -1,12 +1,23 @@
 <div class="form">
+    <h3 class="logo" > Achagro </h3>
     <h4 class="mb-4">Déjà client ?</h4>
     <div class="form-group">
-        <label for="numero"><small>Numéro de telephone</small></label>
-        <input type="number" id="numero">
+        <label for="numero">Numéro de telephone</label>
+        <div class="country-options">
+            <select name="pays" id="id">
+                <option value="benin">(00229)</option>
+                <option value="civ" >(00225)</option>
+                <option value="civ" >(00226)</option>
+                <option value="civ" >(00227)</option>
+                <option value="civ" >(00228)</option>
+                <option value="civ" >(00221)</option>
+            </select>
+            <input type="tel" id="numero">
+        </div>
     </div>
     <div class="form-group">
-        <label for="password"><small>Mot de passe</small></label>
-        <input type="password" id="password" value="password">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" value="passwordpassword">
     </div>
     <div >
         <button class="login-button">Connexion</button>
