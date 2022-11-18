@@ -1,3 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-left: 145px;
+    color: #3498db;
+    font-size: 30px;
+}
+
 .form {
     box-sizing: border-box;
     background-color: white;
@@ -6,14 +16,14 @@
     margin: 50px auto 10px;
     width: 30%;
     border: none;
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 .form-group {
     display: flex;
     flex-direction: column;
     
 }
-input, button{
+input, button, select{
     width: 90%;
     margin: 0 20px 20px;
 }
@@ -31,6 +41,7 @@ input:hover, select:hover{
 }
 label{
   margin-left: 25px;
+  color: #3498db;
 }
 button{
     padding: 5px;
@@ -41,7 +52,6 @@ button{
     background-color: #3498db;
     color: white;
     border: none;
-    margin-left: 25px;
 }
 
 .login-button:hover{
@@ -49,6 +59,8 @@ button{
     color: white;
     border: none;
 }
+
+
 .registration-button {
     color: #3498db;
     background-color: white;
@@ -61,31 +73,53 @@ button{
     background-color: #3498db;
     border-color: white;
 }
+
 p {
-    text-align: right;
-    margin-right: 10px;
-}
-label{
-    color: #3498db;
     
+    margin-right: 10px;
 }
 .registration-card{
     box-sizing: border-box;
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
-    margin: 10px auto 50px ; 
+    margin: 10px auto 10px ; 
     width: 30%;
-    padding: 10px 0px;
+    border: none;
+    padding: 5px 0px;
 }
+
 h4{
     margin-left: 25px;
+    font-size: 18px;
 }
-.logo {
-    width: inherit;
-    margin: 0 auto 30px;
+
+.drop{
+    margin: 30px auto 40px;
+    width: 400px;
+    height: 200px;
+    border: 5px dashed #3498db;
+    border-radius: 10%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.drop:hover{
+    border: 5px dashed rgb(231, 223, 223);
+}
+.drop p{
     color: #3498db;
-    font-size: 30px;
+}
+.drop i {
+    margin: auto;
+    font-size: 50px;
+    color: #3498db;
+}
+.drop-button{
+    padding-bottom: 10px;
+    width: 70px;
+    margin-top: 40px;
 }
 .country-options{
     display: flex;
@@ -96,8 +130,4 @@ h4{
 }
 .country-options input{
     width: 66%;
-}
-p a {
-    color: #3498db;
-    margin-right: 15px;
 }
