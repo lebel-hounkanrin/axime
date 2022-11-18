@@ -9,9 +9,9 @@
             
             <a href="signin"><i class="bi bi-person"></i>Compte</a>
         </div>
-        <div id="header-link-elt-2">
-            
-            <a href="panier"> <i class="bi bi-cart3"></i>Panier</a>
+        <div id="header-link-elt-2"> 
+            <span class="article-counter" *ngIf="products.length>0">{{products.length}}</span>
+            <a routerLink="panier"> <i class="bi bi-cart3"></i>Panier</a>
         </div>
     </div>
 </div>

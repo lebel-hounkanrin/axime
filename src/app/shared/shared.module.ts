@@ -14,7 +14,8 @@ import { BASKET_STORE_PROVIDERS } from '../core/services/basket.providers';
   ],
   providers: [],
   exports: [
-    NgbModule
+    NgbModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

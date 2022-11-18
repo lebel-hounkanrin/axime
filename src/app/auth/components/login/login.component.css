@@ -97,3 +97,7 @@ h4{
 .country-options input{
     width: 66%;
 }
+p a {
+    color: #3498db;
+    margin-right: 15px;
+}

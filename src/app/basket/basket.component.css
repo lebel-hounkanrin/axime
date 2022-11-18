@@ -1,0 +1,50 @@
+.articles {
+    width: 70%;
+}
+.total-price{
+    width: 20%;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    height: 200px;
+    padding: 20px;
+}
+
+.card-btn{
+    border: 2px solid #2ecc71;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 1em;
+    padding: 10px;
+    position: absolute;
+    bottom: 5px;
+    left:40px;
+    right: 40px;
+}
+.card-btn:hover{
+    color: white;
+    border: 2px solid #2ecc71;
+    background-color: #2ecc71;
+}
+.total-price span {
+    color: red;
+    font-weight: 700;
+    position: absolute;
+    right: 10px
+}
+.remove-btn{
+    border: 2px solid #2ecc71;
+    color: white;
+    background-color: #2ecc71;
+    border-radius: 20px;
+    font-size: 1em;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+.remove-btn:hover{
+    color: #2ecc71;
+    border: 2px solid #EFEFEF;
+    background-color: #EFEFEF;
+}

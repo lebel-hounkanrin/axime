@@ -1,4 +1,3 @@
-import { BASKET_STORE_PROVIDERS } from './services/basket.providers';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';

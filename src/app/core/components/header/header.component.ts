@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Product } from './../../models/product.model';
+import { BASKET_STORE } from './../../services/basket.providers';
+import { Component, Inject, OnInit } from '@angular/core';
+import { BasketStore } from '../../models/basket-store.interface';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
+  products!: Product[]
+  constructor(@Inject(BASKET_STORE) readonly basketStore: BasketStore) { }
   ngOnInit(): void {
+    this.basketStore.products$.subscribe((products: Product[]) => { this.products=products });
   }
 
 }

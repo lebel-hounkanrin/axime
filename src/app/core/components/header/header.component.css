@@ -60,6 +60,7 @@ input:focus {
 
 #header-link-elt-2 {
     margin-left: 50px;
+    position: relative;
 }
 
 .bi-search{
@@ -74,4 +75,18 @@ input:focus {
 .bi-person{
     font-size: 29px;
     color: white;
+}
+.article-counter{
+    background-color: #e23a05;
+    border-radius: 60%;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    left: -5px;
+    top: 15px;
+    font-weight: bold;
 }
