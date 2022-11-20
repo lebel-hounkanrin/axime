@@ -7,14 +7,14 @@
 }
 .sub-footer{
     width: 100%;
-    background-color: rgba(52, 152, 219, 0.75);
+    background-color: rgba(39, 60, 117,0.75);
 }
 .sub-footer i{
     font-size: 30px;
-    color: white;
+    color: #ff793f;
 }
 .footer{
-    background-color: #3498db;
+    background-color: #273c75;
 }
 
 .title-infos-footer{
@@ -27,7 +27,7 @@
 }
 
 a{
-    color: white;
+    color: #ff793f;
 }
 a:link{
     text-decoration: none;
@@ -47,5 +47,5 @@ ul{
 
 li{
     margin-top: 30px;
-    color: white;
+    color: #ff793f;
 }

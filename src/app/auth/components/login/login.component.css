@@ -26,8 +26,8 @@ input, select{
     border-radius: 5px;
 }
 input:hover, select:hover{
-    outline: #3498db;
-    border: 1px solid #3498db;
+    outline: #273c75;
+    border: 1px solid #273c75;
 }
 label{
   margin-left: 25px;
@@ -38,27 +38,27 @@ button{
     height: 50px;
 }
 .login-button{
-    background-color: #3498db;
+    background-color: #273c75;
     color: white;
     border: none;
     margin-left: 25px;
 }
 
 .login-button:hover{
-    background-color: rgba(52, 152, 219,0.40);
+    background-color: rgba(39, 60, 117,0.40);
     color: white;
     border: none;
 }
 .registration-button {
-    color: #3498db;
+    color: #273c75;
     background-color: white;
-    border-color: #3498db;
-    border: 1px solid #3498db;
+    border-color: #273c75;
+    border: 1px solid #273c75;
 }
 
 .registration-button:hover {
     color: white;
-    background-color: #3498db;
+    background-color: #273c75;
     border-color: white;
 }
 p {
@@ -66,7 +66,7 @@ p {
     margin-right: 10px;
 }
 label{
-    color: #3498db;
+    color: #273c75;
     
 }
 .registration-card{
@@ -84,7 +84,7 @@ h4{
 .logo {
     width: inherit;
     margin: 0 auto 30px;
-    color: #3498db;
+    color: #273c75;
     font-size: 30px;
 }
 .country-options{
@@ -98,6 +98,6 @@ h4{
     width: 66%;
 }
 p a {
-    color: #3498db;
+    color: #273c75;
     margin-right: 15px;
 }
