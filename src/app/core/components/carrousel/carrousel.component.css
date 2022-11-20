@@ -1,9 +1,13 @@
 .carousel-img{
     height: 400px;
 }
-.carousel-control-prev{
-    color: white;
+.carousel-control-prev, .carousel-control-next{
+    color: #ff793f;
 }
+
+
+
+
 .bi-chevron-double-left, .bi-chevron-double-right{
     font-size: 70px;
 }

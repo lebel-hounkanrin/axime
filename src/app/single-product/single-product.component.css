@@ -1,34 +1,48 @@
-.price {
-    color: rgba(231, 76, 60,1.0);
-    font-size: 25px;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-}
 .addProductBtn{
-    border: 2px solid #2ecc71;
-    color: black;
+    border: 1px solid #273c75;
+    color: #273c75;
     background-color: white;
     border-radius: 20px;
-    font-size: 0.5em;
+    font-size: 0.6em;
     padding: 10px;
     margin-left: 100px;
 }
 .addProductBtn:hover{
     color: white;
-    border: 2px solid #2ecc71;
-    background-color: #2ecc71;
+    border: 1px solid #273c75;
+    background-color: #273c75;
 }
-.card-text, .card-title{
+
+.card-title{
     margin-left: 10px;
+    font-size: 25px;
+    color: #273c75;
     
+}
+
+.card-text{
+    margin-left: 10px;
+    color: black;
+    
+}
+
+.price {
+    color: #ff793f;
+    font-size: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
 }
 .text-description{
     text-align: justify;
     padding-right: 15px;
 }
 .card-img{
-    padding: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    height: 80%;
 }
 .card{
     width: 320px;

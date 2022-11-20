@@ -3,8 +3,8 @@
 }
 
 .logo {
-    margin-left: 145px;
-    color: #3498db;
+    margin-left: 155px;
+    color: #273c75;
     font-size: 30px;
 }
 
@@ -36,12 +36,12 @@ input, select{
     border-radius: 5px;
 }
 input:hover, select:hover{
-    outline: #3498db;
-    border: 1px solid #3498db;
+    outline: #273c75;
+    border: 1px solid #273c75;
 }
 label{
   margin-left: 25px;
-  color: #3498db;
+  color: #273c75;
 }
 button{
     padding: 5px;
@@ -49,28 +49,28 @@ button{
     height: 50px;
 }
 .login-button{
-    background-color: #3498db;
+    background-color: #273c75;
     color: white;
     border: none;
 }
 
 .login-button:hover{
-    background-color: rgba(52, 152, 219,0.40);
+    background-color: rgba(39, 60, 117,0.40);
     color: white;
     border: none;
 }
 
 
 .registration-button {
-    color: #3498db;
+    color: #273c75;
     background-color: white;
-    border-color: #3498db;
-    border: 1px solid #3498db;
+    border-color: #273c75;
+    border: 1px solid #273c75;
 }
 
 .registration-button:hover {
     color: white;
-    background-color: #3498db;
+    background-color: #273c75;
     border-color: white;
 }
 
@@ -98,7 +98,7 @@ h4{
     margin: 30px auto 40px;
     width: 400px;
     height: 200px;
-    border: 5px dashed #3498db;
+    border: 5px dashed #273c75;
     border-radius: 10%;
     padding-bottom: 10px;
     display: flex;
@@ -109,12 +109,12 @@ h4{
     border: 5px dashed rgb(231, 223, 223);
 }
 .drop p{
-    color: #3498db;
+    color: #273c75;
 }
 .drop i {
     margin: auto;
     font-size: 50px;
-    color: #3498db;
+    color: #273c75;
 }
 .drop-button{
     padding-bottom: 10px;

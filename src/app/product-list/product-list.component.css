@@ -10,15 +10,15 @@
 .btn{
     margin-left: 750px;
     margin-top: 20px;
-    border: 2px solid black;
-    color: black;
+    border: 1px solid #273c75;
+    color: #273c75;
     background-color: white;
     border-radius: 20px;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 10px;
 }
 .btn:hover{
     color: white;
-    border: 2px solid #3498db;
-    background-color: #3498db;
+    border: 1px solid #273c75 ;
+    background-color: #273c75;
 }
