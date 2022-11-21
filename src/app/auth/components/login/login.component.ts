@@ -16,4 +16,8 @@ export class LoginComponent implements OnInit {
   goToRegistrationPage(){
     this.router.navigateByUrl("signup")
   }
+  goToHome(){
+    this.router.navigateByUrl("/")
+
+  }
 }

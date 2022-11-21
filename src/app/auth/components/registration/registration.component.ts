@@ -34,6 +34,10 @@ export class RegistrationComponent implements OnInit {
   goToLoginPage(){
     this.router.navigateByUrl("signin")
   }
+  goToHome(){
+    this.router.navigateByUrl("/")
+
+  }
   displayElt(ev: any){
     ev.preventDefault();
     if (ev.dataTransfer.items) {
