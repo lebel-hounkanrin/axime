@@ -10,7 +10,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content. \
             This content is a little bit longer.",
-            price: 20000
+            price: 20000,
+            quantity:1
         },
         {
             id: 2,
@@ -18,7 +19,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content.\
              This content is a little bit longer.",
-            price: 50000
+            price: 50000,
+            quantity:1
         },
         {
             id: 3,
@@ -26,7 +28,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content. \
             This content is a little bit longer.",
-            price: 30000
+            price: 30000,
+            quantity:1
         },
         {
             id: 4,
@@ -34,7 +37,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content. \
             This content is a little bit longer.",
-            price: 25000
+            price: 25000,
+            quantity:1
         },
         {
             id: 5,
@@ -42,7 +46,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content. \
             This content is a little bit longer.",
-            price: 40000
+            price: 40000,
+            quantity:1
         },
         {
             id: 6,
@@ -50,7 +55,8 @@ export class ProductService {
             image:"",
             description: "This is a wider card with supporting text below as a natural lead-in to additional content. \
             This content is a little bit longer.",
-            price: 20000
+            price: 20000,
+            quantity:1
         }
     ];
     selectedProducts: Product[] = [];

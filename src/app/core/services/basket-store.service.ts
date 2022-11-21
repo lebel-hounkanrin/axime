@@ -17,7 +17,15 @@ initialState: BasketStore = {
 
     addProductToBasket(product:Product): void{
         const existingProducts = [...this.productsSubject.value];
-        existingProducts.push(product);
+        if(existingProducts.includes(product)) {product.quantity +=1 }
+        else{
+            existingProducts.push(product);
+            this.productsSubject.next(existingProducts);
+        }
+    }
+    removeProductFromBasket(product: Product){
+        let existingProducts = [...this.productsSubject.value];
+        existingProducts = existingProducts.filter(p => p !== product);
         this.productsSubject.next(existingProducts);
     }
 }

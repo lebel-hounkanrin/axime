@@ -1,6 +1,10 @@
 .articles {
     width: 70%;
 }
+.articles-panier-container{
+    margin-top: 50px;
+    margin-left: 100px;
+}
 .total-price{
     width: 20%;
     position: absolute;
@@ -47,4 +51,11 @@
     color: #2ecc71;
     border: 2px solid #EFEFEF;
     background-color: #EFEFEF;
+}
+.banner{
+    margin-top: 3px;
+    margin-bottom: 100px;
+    width: 70%;
+    height: 100px;
+    background-color: #fafafa;
 }

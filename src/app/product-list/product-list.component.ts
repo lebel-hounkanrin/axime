@@ -10,11 +10,11 @@ import { BasketStoreService } from '../core/services/basket-store.service';
 })
 export class ProductListComponent implements OnInit {
   products!: Product[];
-  constructor(private productSerive: ProductService,
+  constructor(private productService: ProductService,
     private basketStoreService:BasketStoreService) { }
 
   ngOnInit(): void {
-    this.products = this.productSerive.products;
+    this.products = this.productService.products;
   }
   onAddToCart(product:Product): void{
     this.basketStoreService.addProductToBasket(product);
