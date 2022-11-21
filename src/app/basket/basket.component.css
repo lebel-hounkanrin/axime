@@ -31,31 +31,39 @@
     border: 2px solid #2ecc71;
     background-color: #2ecc71;
 }
+.price{
+    color: red;
+    font-weight: 700;
+}
 .total-price span {
     color: red;
     font-weight: 700;
     position: absolute;
     right: 10px
 }
-.remove-btn{
-    border: 2px solid #2ecc71;
-    color: white;
-    background-color: #2ecc71;
-    border-radius: 20px;
-    font-size: 1em;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-}
-.remove-btn:hover{
-    color: #2ecc71;
-    border: 2px solid #EFEFEF;
-    background-color: #EFEFEF;
-}
 .banner{
     margin-top: 3px;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
     width: 70%;
-    height: 100px;
+    height: 50px;
     background-color: #fafafa;
+}
+.articles-img{
+    width: 250px;
+    height: 180px;
+}
+.card-link{
+    display: flex;
+    justify-content: flex-end;
+    width: inherit;
+    margin-right: 0px;
+}
+.quantityInput{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.removeArticleLink{
+    color: #878787;
+    text-decoration: none;
 }

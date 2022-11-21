@@ -11,7 +11,7 @@
 }
 .sub-footer i{
     font-size: 30px;
-    color: #ff793f;
+    color: white;
 }
 .footer{
     background-color: #273c75;
@@ -27,7 +27,7 @@
 }
 
 a{
-    color: #ff793f;
+    color: white;
 }
 a:link{
     text-decoration: none;
@@ -47,5 +47,5 @@ ul{
 
 li{
     margin-top: 30px;
-    color: #ff793f;
+    color: white;
 }

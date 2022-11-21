@@ -131,3 +131,6 @@ h4{
 .country-options input{
     width: 66%;
 }
+.button-group{
+    padding-top: 20px;
+}

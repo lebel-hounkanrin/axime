@@ -27,7 +27,8 @@
 }
 
 .price {
-    color: #ff793f;
+    color: red;
+    font-weight: 700;
     font-size: 20px;
     width: auto;
     display: flex;

@@ -20,7 +20,8 @@ export class BasketComponent implements OnInit {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products=products });
     this.products.forEach(p => this.price+=p.price*p.quantity)
   }
-  removeFromBasket(p: Product){
+  removeFromBasket(p: Product, e: Event){
+    e.preventDefault()
     this.basketStoreService.removeProductFromBasket(p)
     this.basketStore.products$.subscribe((products: Product[]) => { this.products=products });
     const prices :number[] = [];

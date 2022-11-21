@@ -1,6 +1,5 @@
 <div class="form" [formGroup]="registrationForm">
-    <h3 class="logo" > Achagro </h3>
-    <h4 class="mb-4">Nouveau client ?</h4>
+    <h3 class="logo" > Inscription </h3>
     <div class="form-group">
         <label for="numero">Numéro de telephone</label>
         <div class="country-options">
@@ -41,35 +40,9 @@
     </div>
 </div>
 <div class="registration-card">
-    <h4 class="mb-4">Déjà client ?</h4>
-    <div >
+    <div class="button-group">
         <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
-        <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
+        <button class="registration-button" (click)="goToLoginPage()">Retourner à l'acceuil</button>
     </div>
 </div>
 
-
-<!--div class="form-card">
-    <h2>Créer un compte</h2>
-    <div class="form-group">
-        <label for="name">Nom d'utilisateur</label>
-        <input type="text" id="name">
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" id="email">
-    </div>
-    <div class="form-group">
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password">
-    </div>
-
-    <div class="form-group">
-        <label for="repeat-password">Répetez le mot de passe</label>
-        <input type="password" id="repeat-password">
-    </div>
-    <div class="action-buttons">
-        <button>Connexion</button>
-    </div>
-    <p>Vous aviez déjà un compte ? <a href="signin">Se connecter</a></p>
-</div-->
