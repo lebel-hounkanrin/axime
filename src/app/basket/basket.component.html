@@ -14,13 +14,13 @@
                             <span class="box"><a href="" (click)="removeFromBasket(product, $event)"
                                     class="removeArticleLink">Supprimer</a></span>
                             <form action="">
-                                <select name="quantity" id="id" class="quantityInput">
+                                <select name="quantity" id="id" class="quantityInput" #quantity (change)="onQuantityChanges(+quantity.value, product)">
                                     <option value="1">1</option>
-                                    <option value="civ" >2</option>
-                                    <option value="civ" >3</option>
-                                    <option value="civ" >4</option>
-                                    <option value="civ" >5</option>
-                                    <option value="civ" >6</option>
+                                    <option value="2" >2</option>
+                                    <option value="3" >3</option>
+                                    <option value="4" >4</option>
+                                    <option value="5" >5</option>
+                                    <option value="6" >6</option>
                                 </select>
                             </form>
                         </div>
@@ -33,6 +33,7 @@
 </div>
 
 <div class="total-price card">
-    <div class="card-title">Prix <span>{{price}} FCFA</span></div>
+    <h5 class="recap-text">Récapitulatif</h5>
+    <div class="card-title">Total: <span>{{price}} FCFA</span></div>
     <button class="card-btn">Payer</button>
 </div>

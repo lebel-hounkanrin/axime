@@ -2,7 +2,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BASKET_STORE_PROVIDERS } from '../core/services/basket.providers';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,12 +10,13 @@ import { BASKET_STORE_PROVIDERS } from '../core/services/basket.providers';
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   exports: [
     NgbModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

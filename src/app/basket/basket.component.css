@@ -15,25 +15,31 @@
 }
 
 .card-btn{
-    border: 2px solid #2ecc71;
-    color: black;
-    background-color: white;
+    border: 2px solid rgba(43, 176, 74, .8);
+    color: white;
+    background-color: rgba(43, 176, 74, .8);
     border-radius: 20px;
-    font-size: 1em;
-    padding: 10px;
+    font-size: 0.8em;
+    padding: 8px;
     position: absolute;
-    bottom: 5px;
+    bottom:15px;
     left:40px;
     right: 40px;
 }
 .card-btn:hover{
     color: white;
-    border: 2px solid #2ecc71;
-    background-color: #2ecc71;
+    border: 2px solid rgba(43, 176, 74, 1);
+    background-color: rgba(43, 176, 74, 1);
+
 }
 .price{
     color: red;
     font-weight: 700;
+}
+.recap-text{
+   position: absolute;
+   top: -50px;
+    left: -5px;
 }
 .total-price span {
     color: red;
