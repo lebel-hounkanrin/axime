@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { CategorieListComponent } from './categorie-list/categorie-list.component';
 import { BasketComponent } from './basket/basket.component';
+import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { BasketComponent } from './basket/basket.component';
     SharedModule,
     
   ],
-  providers: [BASKET_STORE_PROVIDERS],
+  providers: [
+    BASKET_STORE_PROVIDERS,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor,  multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import { Product } from './../core/models/product.model';
 import { BasketStore } from './../core/models/basket-store.interface';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -14,7 +16,9 @@ export class BasketComponent implements OnInit {
   price: number = 0;
   constructor(
     @Inject(BASKET_STORE) readonly basketStore: BasketStore,
-    private basketStoreService: BasketStoreService) { }
+    private basketStoreService: BasketStoreService,
+    private formBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products = products });
@@ -37,6 +41,12 @@ export class BasketComponent implements OnInit {
       (p1, p2) => p2.id - p1.id 
     );
     this.updatePrice()
+  }
+
+  onSubmitForm(){
+    this.basketStoreService.orderProduct(this.products).subscribe(
+      data => this.router.navigateByUrl("/")
+    )
   }
 
 }

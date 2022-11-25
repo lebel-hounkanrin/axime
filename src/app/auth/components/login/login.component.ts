@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
     this.authService.login({
       phoneNumber: this.loginForm.get("phoneNumber")?.value,
       password: this.loginForm.get("password")?.value
-    }).subscribe(data => this.router.navigateByUrl("/"))
+    }).subscribe(data => {
+      this.router.navigateByUrl("/");
+    })
   }
 
   goToRegistrationPage(){
