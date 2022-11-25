@@ -35,7 +35,6 @@ export class BasketComponent implements OnInit {
     this.price = this.products.map(p => p.price*p.quantity).reduce((q1, q2) => q1+q2);
   }
   onQuantityChanges(quantity: number, product: Product) {
-    console.log(product)
     product.quantity = quantity;
     this.products = [...this.products].filter(p => p.id !== product.id).concat(product).sort(
       (p1, p2) => p2.id - p1.id 

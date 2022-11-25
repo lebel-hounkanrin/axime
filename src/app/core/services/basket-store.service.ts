@@ -6,7 +6,7 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable()
 export class BasketStoreService{
-url = "http://127.0.0.1:3000/product-ordered"
+url = "http://127.0.0.1:3000/order"
 private productsSubject = new BehaviorSubject<Product[]>([]);
 initialState: BasketStore = {
     products$: this.productsSubject.asObservable()
@@ -34,6 +34,6 @@ initialState: BasketStore = {
     }
 
     orderProduct(products: Product[]){
-        return this.http.post(this.url, products)
+        return this.http.post(this.url, {productOrdered: products})
     }
 }
