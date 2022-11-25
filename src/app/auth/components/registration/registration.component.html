@@ -3,7 +3,7 @@
     <div class="form-group">
         <label for="numero">Numéro de telephone</label>
         <div class="country-options">
-            <select name="pays" id="id">
+            <select name="pays" id="id" formControlName="countryId">
                 <option value="benin">(00229)</option>
                 <option value="civ" >(00225)</option>
                 <option value="civ" >(00226)</option>
@@ -11,7 +11,7 @@
                 <option value="civ" >(00228)</option>
                 <option value="civ" >(00221)</option>
             </select>
-            <input type="tel" id="numero">
+            <input type="tel" id="numero" formControlName="phoneNumber">
         </div>
     </div>
     <div class="form-group">
@@ -24,11 +24,11 @@
     </div>
     <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" value="passwordpassword">
+        <input type="password" id="password" value="passwordpassword" formControlName="password">
     </div>
     <div class="form-group">
         <label for="confirm-password">Confirmer votre mot de passe</label>
-        <input type="password" id="confirm-password" value="passwordpassword">
+        <input type="password" id="confirm-password" value="passwordpassword" formControlName="confirmPswd">
     </div>
     <div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
         <span class="drop-button"><i class="bi bi-download"></i>

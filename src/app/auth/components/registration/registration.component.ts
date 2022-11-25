@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +13,9 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   registrationForm! : FormGroup;
   piecedIdentiteMsg = "Une photo de votre piece d'identité";
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+  constructor(
+    private router: Router, private formBuilder: FormBuilder,
+    private authService: AuthService, private http : HttpClient) { }
 
   ngOnInit(): void {
     this.initRegistrationForm();
@@ -20,16 +24,26 @@ export class RegistrationComponent implements OnInit {
         if(val === "restaurant" || val === "comerçant"){this.piecedIdentiteMsg = "Charger les photos de la pièce d’identité du gérant"}
         else {this.piecedIdentiteMsg = "Une photo de votre piece d'identité"}
       })
-    ).subscribe()
+    ).subscribe();
   }
   initRegistrationForm(){
     this.registrationForm = this.formBuilder.group({
-      proprietaireCtrl: ["null"]
+      countryId: [Validators.required],
+      phoneNumber: [null, Validators.required],
+      proprietaireCtrl: [],
+      password: [null, Validators.required],
+      confirmPswd: [null, Validators.required]
     })
   }
 
   onSubmitForm() {
-    console.log(this.registrationForm.value);
+    this.authService.register({
+            "phoneNumber": this.registrationForm.get("phoneNumber")?.value,
+            "typeCompte": this.registrationForm.get("proprietaireCtrl")?.value,
+            "password": this.registrationForm.get("password")?.value,
+            "confirmPassword": this.registrationForm.get("confirmPswd")?.value,
+    }).subscribe(d => this.router.navigateByUrl("signin"));
+    
 }
   goToLoginPage(){
     this.router.navigateByUrl("signin")

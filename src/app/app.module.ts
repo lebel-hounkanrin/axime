@@ -29,7 +29,8 @@ import { BasketComponent } from './basket/basket.component';
     AppRoutingModule,
     CoreModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    
   ],
   providers: [BASKET_STORE_PROVIDERS],
   bootstrap: [AppComponent]

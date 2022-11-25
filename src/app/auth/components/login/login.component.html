@@ -1,9 +1,9 @@
-<div class="form">
+<div class="form" [formGroup]="loginForm">
     <h3 class="logo" > Connexion </h3>
     <div class="form-group">
         <label for="numero">Numéro de telephone</label>
         <div class="country-options">
-            <select name="pays" id="id">
+            <select name="pays" id="id" >
                 <option value="benin">(00229)</option>
                 <option value="civ" >(00225)</option>
                 <option value="civ" >(00226)</option>
@@ -11,15 +11,15 @@
                 <option value="civ" >(00228)</option>
                 <option value="civ" >(00221)</option>
             </select>
-            <input type="tel" id="numero">
+            <input type="tel" id="numero" formControlName="phoneNumber">
         </div>
     </div>
     <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" value="passwordpassword">
+        <input type="password" id="password" value="passwordpassword" formControlName="password">
     </div>
     <div >
-        <button class="login-button">Connexion</button>
+        <button class="login-button" (click)="onSubmitForm()">Connexion</button>
     </div>
     <p><a href="">Mot de passe oublié ?</a></p>
 </div>
