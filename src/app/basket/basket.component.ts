@@ -45,7 +45,8 @@ export class BasketComponent implements OnInit {
   onSubmitForm(){
     this.basketStoreService.orderProduct(this.products).subscribe(
       data => this.router.navigateByUrl("/")
-    )
+    );
+    this.router.navigateByUrl("paid");
   }
 
 }

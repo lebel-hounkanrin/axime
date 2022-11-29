@@ -5,12 +5,14 @@ import { MainComponent } from './main/main.component';
 import { RegistrationComponent } from './auth/components/registration/registration.component';
 import { BasketComponent } from './basket/basket.component';
 import { AuthGuard } from './shared/helpers/auth.guard';
+import { AfterPayementComponent } from './after-payement/after-payement.component';
 
 const routes: Routes = [
   {path: "", pathMatch:"full", component: MainComponent},
   {path: "signin", component: LoginComponent},
   {path: "signup", component: RegistrationComponent},
-  {path: "panier", component: BasketComponent, canActivate: [AuthGuard]}
+  {path: "panier", component: BasketComponent, canActivate: [AuthGuard]},
+  {path: "paid", component: AfterPayementComponent}
   
 ];
 

@@ -15,6 +15,7 @@ import { CategorieListComponent } from './categorie-list/categorie-list.componen
 import { BasketComponent } from './basket/basket.component';
 import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AfterPayementComponent } from './after-payement/after-payement.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     MainComponent,
     CategorieComponent,
     CategorieListComponent,
-    BasketComponent
+    BasketComponent,
+    AfterPayementComponent
   ],
   imports: [
     BrowserModule,
