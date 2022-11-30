@@ -1,8 +1,9 @@
 export class Product{
-    id!: number;
-    image!: string;
-    title!: string;
+    id!: string;
+    name!: string;
+    buy_price!: number;
+    sell_price!: number;
+    category!: string;
     description!: string;
-    price!: number;
-    quantity! : number;
+    unity!:string;
 }

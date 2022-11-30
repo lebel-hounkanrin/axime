@@ -21,11 +21,14 @@ initialState: BasketStore = {
 
     addProductToBasket(product:Product): void{
         const existingProducts = [...this.productsSubject.value];
-        if(existingProducts.includes(product)) {product.quantity +=1 }
-        else{
-            existingProducts.push(product);
-            this.productsSubject.next(existingProducts);
-        }
+        existingProducts.push(product);
+        this.productsSubject.next(existingProducts)
+        console.log(existingProducts);
+        //if(existingProducts.includes(product)) {product.quantity +=1 }
+        // else{
+        //     existingProducts.push(product);
+        //     this.productsSubject.next(existingProducts);
+        // }
     }
     removeProductFromBasket(product: Product){
         let existingProducts = [...this.productsSubject.value];
@@ -33,7 +36,9 @@ initialState: BasketStore = {
         this.productsSubject.next(existingProducts);
     }
 
-    orderProduct(products: Product[]){
-        return this.http.post(this.url, {productOrdered: products})
+    orderProduct(prod: {productId: string, product_quantity: number}[]){
+        return this.http.post(this.url, {
+            orderItems: prod
+        })
     }
 }
