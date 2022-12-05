@@ -1,4 +1,4 @@
-import { Product } from './../core/models/product.model';
+import { Product, Stock } from './../core/models/product.model';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../core/services/product.service';
 import { BasketStoreService } from '../core/services/basket-store.service';
@@ -9,12 +9,14 @@ import { BasketStoreService } from '../core/services/basket-store.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products!: Product[];
+  products!: Stock[];
   constructor(private productService: ProductService,
     private basketStoreService:BasketStoreService) { }
 
   ngOnInit(): void {
-    this.productService.getProduct().subscribe(products => this.products=products)
+    this.productService.getProduct().subscribe(products => {
+      this.products=products
+    })
   }
   onAddToCart(product:Product): void{
     this.basketStoreService.addProductToBasket(product);

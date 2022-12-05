@@ -16,6 +16,7 @@ import { BasketComponent } from './basket/basket.component';
 import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AfterPayementComponent } from './after-payement/after-payement.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AfterPayementComponent } from './after-payement/after-payement.componen
     CoreModule,
     AuthModule,
     SharedModule,
+    StoreModule.forRoot({}, {}),
     
   ],
   providers: [

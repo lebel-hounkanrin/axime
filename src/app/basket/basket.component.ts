@@ -13,7 +13,7 @@ import { BasketStoreService } from '../core/services/basket-store.service';
 })
 export class BasketComponent implements OnInit {
   products!: Product[];
-  productList: {productId: string, product_quantity: number}[] = [];
+  productSelected: {product: Product, product_quantity: number}[] = [];
   price: number = 0;
   constructor(
     @Inject(BASKET_STORE) readonly basketStore: BasketStore,
@@ -24,36 +24,32 @@ export class BasketComponent implements OnInit {
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products = products });
     this.products.sort((p1, p2) => p2.sell_price -p1.sell_price);
+    this.products.map(product => this.productSelected.push({product: product, product_quantity:1}));
     this.updatePrice()
-    //this.products.forEach(p => this.price += p.price * p.quantity);
   }
   removeFromBasket(p: Product, e: Event) {
-    e.preventDefault()
+    e.preventDefault();
+    this.productSelected = this.productSelected.filter(product => product.product.id !== p.id)
     this.basketStoreService.removeProductFromBasket(p)
-    this.basketStore.products$.subscribe((products: Product[]) => { this.products = products });
     this.updatePrice()
+    
   }
   updatePrice(){
-    this.price = this.products.map(product => product.sell_price).reduce((p1, p2) => p1+p2)
-    //this.price = this.products.map(p => p.price*p.quantity).reduce((q1, q2) => q1+q2);
+    this.price =this.productSelected.map((a => a.product_quantity*a.product.sell_price)).reduce((a, b) => a+b, 0)
   }
   onQuantityChanges(quantity: number, product: Product) {
-    this.productList.push({productId: product.id, product_quantity:quantity});
-    console.log(this.productList)
-    // product.quantity = quantity;
-    // this.products = [...this.products].filter(p => p.id !== product.id).concat(product).sort(
-    //   (p1, p2) => p2.id - p1.id 
-    // );
-    // this.updatePrice()
+    const item =this.productSelected.find(prod => prod.product.id == product.id);
+    item ? item.product_quantity = quantity : 1;
+    this.updatePrice();
   }
 
   onSubmitForm(){
-    
-    console.log(this.productList[0])
-     this.basketStoreService.orderProduct(this.productList).subscribe(
-       data => this.router.navigateByUrl("paid")
-     );
-     //this.router.navigateByUrl("paid");
+    const order :{productId: string, product_quantity: number}[] = [];
+    this.productSelected.map(prod => order.push({productId: prod.product.id, product_quantity: prod.product_quantity}))
+    this.basketStoreService.orderProduct(order).subscribe(
+     data => this.router.navigateByUrl("paid")
+   );
+  
   }
 
 }
