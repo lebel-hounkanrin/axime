@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { ProductListComponent } from './product-list/product-list.component';
-import { SingleProductComponent } from './single-product/single-product.component';
 import { AuthModule } from './auth/auth.module';
 import { MainComponent } from './main/main.component';
 import { CategorieComponent } from './categorie/categorie.component';
@@ -17,12 +15,14 @@ import { JwtInterceptor } from './shared/helpers/jwt-interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AfterPayementComponent } from './after-payement/after-payement.component';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    SingleProductComponent,
     MainComponent,
     CategorieComponent,
     CategorieListComponent,
@@ -34,8 +34,11 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     CoreModule,
     AuthModule,
+    ProductsModule,
     SharedModule,
     StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     
   ],
   providers: [
