@@ -6,7 +6,7 @@ export class Product{
     category!: string;
     description!: string;
     unity!:string;
-    quantity?: number;
+    quantity: number = 1;
 }
 export class Stock{
     product!: Product;

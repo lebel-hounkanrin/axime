@@ -7,6 +7,7 @@ import { ProductService } from 'src/app/core/services/product.service';
 import { BasketStoreService } from 'src/app/core/services/basket-store.service';
 import { selectStocks } from '../store/stocks.selector';
 import { invokeStocksAPI } from '../store/stocks.action';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +16,7 @@ import { invokeStocksAPI } from '../store/stocks.action';
 })
 export class ProductListComponent implements OnInit {
   products!: Stock[];
+  products$!: Observable<Product>;
   constructor(private productService: ProductService,
     private basketStoreService:BasketStoreService,
     private store: Store
@@ -22,7 +24,9 @@ export class ProductListComponent implements OnInit {
     stocks$ = this.store.pipe(select(selectStocks))
   ngOnInit(): void {
     this.store.dispatch(invokeStocksAPI());
-    this.stocks$.subscribe(data => this.products = data)
+    this.stocks$.subscribe(data => {
+      this.products = data
+    });
   }
   onAddToCart(product:Product): void{
     this.basketStoreService.addProductToBasket(product);

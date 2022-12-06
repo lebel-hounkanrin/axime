@@ -12,4 +12,5 @@ export interface Products{
     category: string;
     description: string;
     unity:string;
+    quantity: number
 }   

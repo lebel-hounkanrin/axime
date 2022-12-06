@@ -18,12 +18,21 @@ initialState: BasketStore = {
             throw Error("Trying to create mutliple instance. This service should be singleton")
         }
     }
-
+    updateQuantity(product: Product, quantity: number){
+        let existingProducts = [...this.productsSubject.value];
+        product.quantity = quantity
+        //const prod = {...product, quantity: quantity}
+        //existingProducts = [...existingProducts.filter(p => p !== product)].concat(prod);
+        product.quantity = quantity;
+        this.productsSubject.next(existingProducts);
+    }
     addProductToBasket(product:Product): void{
         const existingProducts = [...this.productsSubject.value];
-        
-        if(!existingProducts.includes(product)) {
-            existingProducts.push(product);
+        const prod = {...product, quantity: 1}
+        if((existingProducts.filter(p => p.id === prod.id)).length !==0) {
+           
+        } else {
+            existingProducts.push(prod);
             this.productsSubject.next(existingProducts);
         }
         // else{

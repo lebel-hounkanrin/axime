@@ -14,7 +14,7 @@
                             <span class="box"><a href="" (click)="removeFromBasket(product, $event)"
                                     class="removeArticleLink">Supprimer</a></span>
                             <form action="">
-                                <select name="quantity" id="id" class="quantityInput" #quantity (change)="onQuantityChanges(+quantity.value, product)">
+                                <select name="quantity" id="id" class="quantityInput" #quantity (change)="onQuantityChanges(+quantity.value, product)" [value]="product.quantity">
                                     <option value="1">1</option>
                                     <option value="2" >2</option>
                                     <option value="3" >3</option>
