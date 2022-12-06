@@ -1,8 +1,12 @@
+import { select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Product, Stock } from './../../core/models/product.model';
 
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/core/services/product.service';
 import { BasketStoreService } from 'src/app/core/services/basket-store.service';
+import { selectStocks } from '../store/stocks.selector';
+import { invokeStocksAPI } from '../store/stocks.action';
 
 @Component({
   selector: 'app-product-list',
@@ -12,12 +16,13 @@ import { BasketStoreService } from 'src/app/core/services/basket-store.service';
 export class ProductListComponent implements OnInit {
   products!: Stock[];
   constructor(private productService: ProductService,
-    private basketStoreService:BasketStoreService) { }
-
+    private basketStoreService:BasketStoreService,
+    private store: Store
+    ) { }
+    stocks$ = this.store.pipe(select(selectStocks))
   ngOnInit(): void {
-    this.productService.getProduct().subscribe(products => {
-      this.products=products
-    })
+    this.store.dispatch(invokeStocksAPI());
+    this.stocks$.subscribe(data => this.products = data)
   }
   onAddToCart(product:Product): void{
     this.basketStoreService.addProductToBasket(product);
