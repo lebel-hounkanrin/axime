@@ -20,6 +20,7 @@ export const getMoreProduct = createReducer(
 export const getProductsByCategory = createReducer(
     initialState, 
     on(getStocksByCategorySucess, (state, {stocks}) => {
+        console.log(stocks)
         return stocks
     })
 )

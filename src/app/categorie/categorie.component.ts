@@ -18,6 +18,6 @@ export class CategorieComponent implements OnInit {
 
   getStocksByCategory(category_name: string){
     this.store.dispatch(getStocksByCategoryAPI({category_name: category_name}));
-    this.stocks$.subscribe()
+    //this.stocks$.subscribe(data => console.log(data))
   }
 }

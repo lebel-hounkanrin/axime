@@ -42,10 +42,11 @@ export class StocksEffect {
     getStocksByCategory$ = createEffect(() => 
     this.action$.pipe(
         ofType(getStocksByCategoryAPI),
-        withLatestFrom(this.store.pipe(select(selectStocks))),
+        //withLatestFrom(this.store.pipe(select(selectStocks))),
         switchMap((action:any) => {
             //console.log(action[0].category_name)
-            return this.stocksService.getProductsInStockByCategory(action[0].category_name)
+            console.log(action.category_name)
+            return this.stocksService.getProductsInStockByCategory(action.category_name)
             .pipe(map((data) => getStocksByCategorySucess({stocks: data})))
         })
         )

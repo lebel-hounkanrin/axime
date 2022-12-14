@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { stocksReducer } from './store/stocks.reducer';
+import { getProductsByCategory, stocksReducer } from './store/stocks.reducer';
 
 
 
@@ -18,7 +18,8 @@ import { stocksReducer } from './store/stocks.reducer';
   ],
   imports: [
     StoreModule.forFeature("stocks", stocksReducer),
-    EffectsModule.forFeature([StocksEffect]),
+    StoreModule.forFeature("productCategory", getProductsByCategory),
+    EffectsModule.forFeature([StocksEffect, ]),
     CommonModule,
     CoreModule,
     SharedModule
