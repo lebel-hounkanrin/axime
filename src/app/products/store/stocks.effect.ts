@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { act, Actions, createEffect, ofType } from "@ngrx/effects";
 import { select, Store } from "@ngrx/store";
-import { EMPTY, map, mergeMap, withLatestFrom } from "rxjs";
+import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from "rxjs";
 import { StocksService } from "../stocks.service";
-import { invokeMoreStocksAPI, invokeStocksAPI, stocksFetchAPISuccess } from "./stocks.action";
+import { getStocksByCategoryAPI, getStocksByCategorySucess, invokeMoreStocksAPI, invokeStocksAPI, stocksFetchAPISuccess } from "./stocks.action";
 import { selectMoreStocks, selectStocks } from "./stocks.selector";
 
 @Injectable()
@@ -33,10 +33,21 @@ export class StocksEffect {
             ofType(invokeMoreStocksAPI),
             withLatestFrom(this.store.pipe(select(selectMoreStocks))),
             mergeMap(([, stock]) => {
-                //if(stock.length > 0) { console.log("hi"); return EMPTY}
                 return this.stocksService.getMoreProducts()
                 .pipe(map((data) => stocksFetchAPISuccess({stocks: data})))
             })
             )
-    )
+    );
+
+    getStocksByCategory$ = createEffect(() => 
+    this.action$.pipe(
+        ofType(getStocksByCategoryAPI),
+        withLatestFrom(this.store.pipe(select(selectStocks))),
+        switchMap((action:any) => {
+            //console.log(action[0].category_name)
+            return this.stocksService.getProductsInStockByCategory(action[0].category_name)
+            .pipe(map((data) => getStocksByCategorySucess({stocks: data})))
+        })
+        )
+)
 }

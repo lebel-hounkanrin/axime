@@ -15,4 +15,8 @@ export class StocksService{
         this.limit +=skip
         return this.http.get<Stocks[]>(`${this._url}/stock/${this.limit}`)
     }
+
+    getProductsInStockByCategory(category_name?: string){
+        return this.http.get<Stocks[]>(`${this._url}/stock/?category=${category_name}`)
+    }
 }

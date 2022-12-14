@@ -1,9 +1,14 @@
 .categorie {
+    display: flex;
     width: 140px;
     height: 140px;
     margin-top: 40px;
     background-color: #273c75;
     border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 .categorie:hover{

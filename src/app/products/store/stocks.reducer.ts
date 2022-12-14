@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { Stocks } from "./stocks";
-import { getMoreStocksSuccess, stocksFetchAPISuccess } from "./stocks.action";
+import { getMoreStocksSuccess, getStocksByCategorySucess, stocksFetchAPISuccess } from "./stocks.action";
 
 export const initialState: ReadonlyArray<Stocks> =[];
 
@@ -14,6 +14,12 @@ export const stocksReducer = createReducer(
 export const getMoreProduct = createReducer(
     initialState, 
     on(getMoreStocksSuccess, (state, {stocks}) => {
+        return stocks
+    })
+)
+export const getProductsByCategory = createReducer(
+    initialState, 
+    on(getStocksByCategorySucess, (state, {stocks}) => {
         return stocks
     })
 )
