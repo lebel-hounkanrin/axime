@@ -1,4 +1,30 @@
 <div class="articles-panier-container">
+<div >
+        <!-- Button trigger modal -->
+        <button id="initModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#missProductModal" style="display: none;">
+        
+        </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="missProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Quantité insuffisante de produit</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {{missedProductMsg}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="removeFromBasket(missedProductName, $event)" *ngIf="displayButton">Retirer ce produit </button>
+              <button type="button" class="btn btn-success" (click)="onSubmitForm()" *ngIf="displayButton">Prendre la quantité disponible</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  
     <div class="articles-panier" *ngFor="let product of products">
         <div class="card mb-1 articles">
             <div class="row g-0">
@@ -14,13 +40,14 @@
                             <span class="box"><a href="" (click)="removeFromBasket(product, $event)"
                                     class="removeArticleLink">Supprimer</a></span>
                             <form action="">
-                                <select name="quantity" id="id" class="quantityInput" #quantity (change)="onQuantityChanges(+quantity.value, product)" [value]="product.quantity">
+                                <select name="quantity" id="id" class="quantityInput" #quantity
+                                    (change)="onQuantityChanges(+quantity.value, product)" [value]="product.quantity">
                                     <option value="1">1</option>
-                                    <option value="2" >2</option>
-                                    <option value="3" >3</option>
-                                    <option value="4" >4</option>
-                                    <option value="5" >5</option>
-                                    <option value="6" >6</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
                                 </select>
                             </form>
                         </div>
