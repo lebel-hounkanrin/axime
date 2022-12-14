@@ -4,11 +4,11 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ProductService {
+    selectedProducts: Product[] = [];
     constructor(private http: HttpClient){}
     private _url = "http://127.0.0.1:3000/stock"
     getProduct(){
-        return this.http.get<Stock[]>(this._url)
+        return this.http.get<Stock[]>(`${this._url}/6`)
     }
-    selectedProducts: Product[] = [];
     
 }
