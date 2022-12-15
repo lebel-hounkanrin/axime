@@ -1,8 +1,8 @@
 <div class="header">
     <h1 class="header-title">Achagro</h1>
     <div id="searchbar">
-        <input type="text" placeholder="Qu'est ce qui vous ferait plaisir ?">
-        <button class="btn"><i class="bi bi-search"></i></button>
+        <input type="text" placeholder="Qu'est ce qui vous ferait plaisir ?" [(ngModel)]="tag">
+        <button class="btn" (click)="searchProduct()"><i class="bi bi-search"></i></button>
     </div>
     <div class="header-link">
         <div id="header-link-elt-1">

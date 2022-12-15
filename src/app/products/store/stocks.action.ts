@@ -27,3 +27,13 @@ export const getStocksByCategorySucess = createAction(
     "[Stocks API] Fetch API Succes",
     props<{stocks: Stocks[]}>()
 )
+
+export const getProductByTagAPI = createAction(
+    "[Stocks API] Get products by tag name",
+    props<{tag_name: string}>()
+)
+
+export const getProductByTagSuccess = createAction(
+    "[Stocks API] Fetch API success",
+    props<{stocks: Stocks[]}>()
+)

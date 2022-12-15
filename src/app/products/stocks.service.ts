@@ -19,4 +19,8 @@ export class StocksService{
     getProductsInStockByCategory(category_name?: string){
         return this.http.get<Stocks[]>(`${this._url}/stock/?category=${category_name}`)
     }
+
+    getProductsByTag(tag_name: string){
+        return this.http.get<Stocks[]>(`${this._url}/stock/tag?tag_name=${tag_name}`)
+    }
 }
