@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Product } from './../core/models/product.model';
 import { BasketStore } from './../core/models/basket-store.interface';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, DoCheck, Inject, OnInit } from '@angular/core';
 import { BASKET_STORE } from '../core/services/basket.providers';
 import { BasketStoreService } from '../core/services/basket-store.service';
 import { Store } from '@ngrx/store';
@@ -15,7 +15,7 @@ import { Stocks } from '../products/store/stocks';
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.css']
 })
-export class BasketComponent implements OnInit {
+export class BasketComponent implements OnInit, DoCheck {
   products!: Product[];
   price: number = 0;
   missedProductName : Product = new Product();
@@ -37,6 +37,11 @@ export class BasketComponent implements OnInit {
     this.stocks.map(stock => this.maxValues[stock.product.id] = Array(stock.quantity) )
     console.log(this.maxValues)
     this.updatePrice()
+  }
+  ngDoCheck(): void {
+      if(this.products.length > 0){
+        this.updatePrice()
+      }
   }
   removeFromBasket(p: Product, e?: Event) {
     e?.preventDefault();

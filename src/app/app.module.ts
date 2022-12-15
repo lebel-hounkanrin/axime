@@ -19,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ProductsModule } from './products/products.module';
+import { RecommendationProductsComponent } from './recommendation-products/recommendation-products.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductsModule } from './products/products.module';
     CategorieComponent,
     CategorieListComponent,
     BasketComponent,
-    AfterPayementComponent
+    AfterPayementComponent,
+    RecommendationProductsComponent
   ],
   imports: [
     BrowserModule,
