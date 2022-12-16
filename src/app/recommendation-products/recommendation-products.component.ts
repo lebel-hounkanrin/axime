@@ -1,3 +1,4 @@
+import { StocksService } from './../products/stocks.service';
 import { BasketStoreService } from './../core/services/basket-store.service';
 import { Product } from './../core/models/product.model';
 import { Component, OnInit } from '@angular/core';
@@ -16,14 +17,12 @@ export class RecommendationProductsComponent implements OnInit {
   stocks$ = this.store.pipe(select(selectStocks));
   constructor(
     private store: Store,
-    private basketStoreService: BasketStoreService
+    private basketStoreService: BasketStoreService,
+    private stockService: StocksService
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(invokeStocksAPI());
-    this.stocks$.subscribe(data => {
-      this.products = data
-    });
+    this.stockService.getRandom().subscribe(data => this.products = data)
   }
 
   onAddToCart(product:Product): void{

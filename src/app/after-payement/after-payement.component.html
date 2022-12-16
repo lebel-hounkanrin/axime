@@ -1,1 +1,25 @@
-<p>paiement éffectué avec succes</p>
+<div class="card card-box">
+    <h4>Choisir son échéancier</h4>
+    <form [formGroup]="timelineForm" (ngSubmit)="onSubmit()">
+        <div class="form-radio-group">
+            <div class="form-group">
+                <input type="radio" name="timelineCtrl" id="oneTimeNow" value="1" formControlName="timelineCtrl">
+                <label for="oneTimeNow"payment>Payer en une seule fois</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="timelineCtrl" id="fourTimeInWeek" value="2" formControlName="timelineCtrl">
+                <label for="fourTimeInWeek">Payer en 04 tranches(01 tranche chaque semaine) </label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="timelineCtrl" id="threeTimeInWeek" value="3" formControlName="timelineCtrl">
+                <label for="threeTimeInWeek">Payer en 03 tranches(01 tranche chaque 10 jours) </label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="timelineCtrl" id="oneTimeInWeek" value="4" formControlName="timelineCtrl">
+                <label for="oneTimeInWeek">Payer la totalité dans 30 jours </label>
+            </div>
+        </div>
+        <div class="displayMsg">{{timeLineMessage}}</div>
+        <!--button type="submit">Envoyer</button-->
+    </form>
+</div>

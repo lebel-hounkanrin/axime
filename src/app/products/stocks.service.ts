@@ -23,4 +23,7 @@ export class StocksService{
     getProductsByTag(tag_name: string){
         return this.http.get<Stocks[]>(`${this._url}/stock/tag?tag_name=${tag_name}`)
     }
+    getRandom(){
+        return this.http.get<Stocks[]>(`${this._url}/stock/4`);
+    }
 }

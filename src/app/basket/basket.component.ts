@@ -22,6 +22,7 @@ export class BasketComponent implements OnInit, DoCheck {
   missedQuantity: number =0;
   showModal=false;
   missedProductMsg ="";
+  messaageTitle = ""
   displayButton = true;
   constructor(
     @Inject(BASKET_STORE) readonly basketStore: BasketStore,
@@ -62,7 +63,14 @@ export class BasketComponent implements OnInit, DoCheck {
     const order :{productId: string, product_quantity: number}[] = [];
     this.products.map(prod => order.push({productId: prod.id, product_quantity: prod.quantity}))
     this.basketStoreService.orderProduct(order).subscribe({
-      next: (data) => this.router.navigateByUrl("paid"),
+      next: (data) => {
+        this.router.navigateByUrl(`/paid/${this.price}`)
+        /*const button = document.getElementById("initModal");
+        this.messaageTitle = "Achat effectué";
+        this.missedProductMsg = "paiement éffectué avec succes"
+        this.showModal = true;
+        button?.click();*/
+      },
       error: async (error: any) => {
          console.log(error.status)
          console.log(error.error)
@@ -71,6 +79,7 @@ export class BasketComponent implements OnInit, DoCheck {
             const productId = error.error.productId;
             this.missedProductName = this.products.filter(p => p.id == productId)[0];
             this.missedProductMsg = `Oups quelq'un vient de prendre toute la quantité de ${this.missedProductName.name} qui reste.`;
+            this.messaageTitle = "Quantité insuffisante de produit"
             this.displayButton= false;
             this.removeFromBasket(this.missedProductName)
             button?.click();
@@ -81,12 +90,17 @@ export class BasketComponent implements OnInit, DoCheck {
           this.missedProductName = this.products.filter(p => p.id == productId)[0];
           this.missedQuantity = quantity;
           this.onQuantityChanges(quantity, this.missedProductName);
-          this.missedProductMsg = `Oups Le produit ${this.missedProductName.name} ne reste plus en quantitité suffisante. Vous pouvez en prendre ${this.missedQuantity}`
+          this.missedProductMsg = `Oups Le produit ${this.missedProductName.name} ne reste plus en quantitité suffisante. Vous pouvez en prendre ${this.missedQuantity}`;
+          this.messaageTitle = "Produit indisponible"
           this.showModal = true;
           button?.click();
          }
       }
     });
+  }
+
+  goBackHome(){
+    this.router.navigateByUrl("/")
   }
 
 }

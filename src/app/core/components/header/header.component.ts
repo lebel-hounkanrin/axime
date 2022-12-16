@@ -6,7 +6,7 @@ import { StocksService } from 'src/app/products/stocks.service';
 import { selectStocks } from 'src/app/products/store/stocks.selector';
 import { select, Store } from '@ngrx/store';
 import { getProductByTagAPI } from 'src/app/products/store/stocks.action';
-import { map } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
 
   searchProduct(){
    this.store.dispatch(getProductByTagAPI({tag_name: this.tag}));
+   this.tag = ''
   }
 
 }

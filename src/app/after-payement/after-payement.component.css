@@ -1,0 +1,18 @@
+.card-box{
+    width: 50%;
+    margin: 50px auto;
+}
+.form-group{
+    display: flex;
+    margin: 5px;
+}
+label{
+    margin-left: 5px;
+}
+h4{
+    padding-top: 10px;
+    text-align: center;
+}
+.displayMsg{
+  margin-left: 20px;
+}

@@ -10,7 +10,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Quantité insuffisante de produit</h5>
+              <h5 class="modal-title" id="exampleModalLabel">{{messaageTitle}}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -63,5 +63,10 @@
     <h5 class="recap-text">Récapitulatif</h5>
     <div class="card-title">Total: <span>{{price}} FCFA</span></div>
     <button class="card-btn" (click)="onSubmitForm()">Payer</button>
+</div>
+<div class="back-box">
+
+    <button class="back-button" (click)="goBackHome()">Retourner à l'acceuil</button>
+
 </div>
 <app-recommendation-products></app-recommendation-products>

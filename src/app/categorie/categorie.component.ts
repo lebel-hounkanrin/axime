@@ -1,3 +1,4 @@
+import { invokeStocksAPI } from './../products/store/stocks.action';
 import { Store, select } from '@ngrx/store';
 import { Component, Input, OnInit } from '@angular/core';
 import { selectStocks } from '../products/store/stocks.selector';
@@ -17,6 +18,9 @@ export class CategorieComponent implements OnInit {
   }
 
   getStocksByCategory(category_name: string){
+    if(category_name == "Tout les produits"){
+      this.store.dispatch(invokeStocksAPI())
+    }
     this.store.dispatch(getStocksByCategoryAPI({category_name: category_name}));
     //this.stocks$.subscribe(data => console.log(data))
   }

@@ -1,3 +1,4 @@
+import { getProductByTagSuccess } from './store/stocks.action';
 import { StocksEffect } from './store/stocks.effect';
 import { EffectsModule } from '@ngrx/effects';
 import { SingleProductComponent } from './single-product/single-product.component';
@@ -7,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { getProductsByCategory, stocksReducer } from './store/stocks.reducer';
+import { getProductsByCategory, getProductsByTags, stocksReducer } from './store/stocks.reducer';
 
 
 
@@ -19,6 +20,7 @@ import { getProductsByCategory, stocksReducer } from './store/stocks.reducer';
   imports: [
     StoreModule.forFeature("stocks", stocksReducer),
     StoreModule.forFeature("productCategory", getProductsByCategory),
+    StoreModule.forFeature("getProductByTag", getProductsByTags),
     EffectsModule.forFeature([StocksEffect, ]),
     CommonModule,
     CoreModule,
