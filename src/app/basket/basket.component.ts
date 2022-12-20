@@ -1,3 +1,4 @@
+import { Basket } from './../store/basket/basket.model';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Product } from './../core/models/product.model';
@@ -9,6 +10,7 @@ import { Store } from '@ngrx/store';
 import { increaseQuantity } from '../products/store/product.action';
 import { selectStocks } from '../products/store/stocks.selector';
 import { Stocks } from '../products/store/stocks';
+import { basketInitialState } from '../store/basket/basket.reducer';
 
 @Component({
   selector: 'app-basket',
@@ -61,15 +63,16 @@ export class BasketComponent implements OnInit, DoCheck {
 
   onSubmitForm(){
     const order :{productId: string, product_quantity: number}[] = [];
-    this.products.map(prod => order.push({productId: prod.id, product_quantity: prod.quantity}))
+    this.products.map(prod => {
+      order.push({productId: prod.id, product_quantity: prod.quantity});
+      basketInitialState.items.push({productId: prod.id, product_quantity: prod.quantity})
+    });
+    this.router.navigateByUrl(`/paid/${this.price}`)
+    
+    /*;
     this.basketStoreService.orderProduct(order).subscribe({
       next: (data) => {
         this.router.navigateByUrl(`/paid/${this.price}`)
-        /*const button = document.getElementById("initModal");
-        this.messaageTitle = "Achat effectué";
-        this.missedProductMsg = "paiement éffectué avec succes"
-        this.showModal = true;
-        button?.click();*/
       },
       error: async (error: any) => {
          console.log(error.status)
@@ -97,6 +100,7 @@ export class BasketComponent implements OnInit, DoCheck {
          }
       }
     });
+    */
   }
 
   goBackHome(){

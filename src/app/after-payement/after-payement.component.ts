@@ -1,24 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { basketInitialState } from './../store/basket/basket.reducer';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BasketStoreService } from '../core/services/basket-store.service';
+import { Product } from '../core/models/product.model';
 
 @Component({
   selector: 'app-after-payement',
   templateUrl: './after-payement.component.html',
   styleUrls: ['./after-payement.component.css']
 })
-export class AfterPayementComponent implements OnInit {
+export class AfterPayementComponent implements OnInit, OnDestroy {
   timelineForm!: FormGroup;
   timelineCtrl! : FormControl;
   timeLineMessage! :string;
   totalAmount! : number;
+  order :{productId: string, product_quantity: number}[] = [];
+
+  missedProductName : Product = new Product();
+  missedQuantity: number =0;
+  showModal=false;
+  missedProductMsg ="";
+  messaageTitle = ""
+  displayButton = true;
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private activatedRroute: ActivatedRoute,
+    private basketStoreService: BasketStoreService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    const total = this.route.snapshot.paramMap.get("total");
+    this.order= basketInitialState.items
+    const total = this.activatedRroute.snapshot.paramMap.get("total");
     this.totalAmount = total ? +total: 0
     this.timelineCtrl = this.formBuilder.control("")
     this.timelineForm = this.formBuilder.group({
@@ -27,7 +41,17 @@ export class AfterPayementComponent implements OnInit {
     this.timelineCtrl.valueChanges.subscribe(val => this.timeLineMessage = this.dispalyPaymentMessage(val, this.totalAmount))
   }
 
-  onSubmit(){console.log(this.timelineCtrl.value)}
+  onSubmit(){
+    this.basketStoreService.orderProduct(this.order).subscribe({
+      next: (data) => {
+        //this.router.navigateByUrl(`/paid/${this.price}`)
+        this.router.navigateByUrl("/")
+      },
+      error: async (error: any) => {
+        
+      }
+    });
+  }
 
   computePrice(timeLine: number, total:number): number[]{
     if(timeLine ==1) return [total];
@@ -68,4 +92,7 @@ export class AfterPayementComponent implements OnInit {
     return "";
   }
 
+  ngOnDestroy(): void {
+      basketInitialState.items = []
+  }
 }
