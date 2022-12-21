@@ -75,19 +75,19 @@ export class AfterPayementComponent implements OnInit, OnDestroy {
   dispalyPaymentMessage(timeline:number, total:number): string{
     if(timeline ==1){
       const prices = this.computePrice(timeline, total);
-      return `Payez ${prices[0]} en une fois pour toute`
+      return `Payez ${prices[0]} FCFA en une fois pour toute`
     }
     if(timeline ==2){
       const prices = this.computePrice(timeline, total);
-      return `Payez ${prices[0]} maintenant et ${prices[1]} chaque semaine`
+      return `Payez ${prices[0]} FCFA maintenant et ${prices[1]} FCFA chaque semaine`
     }
     if(timeline ==3){
       const prices = this.computePrice(timeline, total);
-      return `Payez ${prices[0]} maintenant et ${prices[1]} chaque 10 jours`
+      return `Payez ${prices[0]} FCFA maintenant et ${prices[1]} FCFA chaque 10 jours`
     }
     if(timeline ==4){
       const prices = this.computePrice(timeline, total);
-      return `Payez  ${prices[0]} maintenant et ${prices[1]} à la fin du mois.`
+      return `Payez  ${prices[0]} FCFA maintenant et ${prices[1]} FCFA à la fin du mois.`
     }
     return "";
   }
