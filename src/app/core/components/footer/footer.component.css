@@ -49,3 +49,14 @@ li{
     margin-top: 30px;
     color: white;
 }
+
+@media (min-width: 768px) and (max-width:1200px){
+    .social-media{
+    width: 100%;
+    justify-content: space-around;
+    margin: auto;
+    }
+    .footer {
+        font-size: 12px;
+    }
+}
