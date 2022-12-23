@@ -6,7 +6,7 @@ import { Stocks } from './store/stocks';
 export class StocksService{
     constructor(private http: HttpClient){}
     private _url = "http://localhost:3000";
-    limit = 3;
+    limit = 6;
     skip=0;
     get(){
        return this.http.get<Stocks[]>(`${this._url}/stock/${this.limit}`);

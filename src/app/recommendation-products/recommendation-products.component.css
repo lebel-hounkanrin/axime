@@ -5,8 +5,23 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
-    justify-content: space-around;
+    justify-content:flex-start;
 }
 .recommendation {
     margin-top: 50px;
+}
+@media (min-width: 768px) and (max-width:992px){
+    .items{
+        width: 30%;
+        font-size: 0.8em;
+    }
+    .btn{
+        margin-left: 50%;
+    }
+}
+@media (min-width: 768px){
+    .items{
+        width: 30%;
+        font-size: 0.8em;
+    }  
 }

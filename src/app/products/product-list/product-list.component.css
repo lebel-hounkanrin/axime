@@ -6,6 +6,9 @@
     margin-right: 0;
     padding-right: 0;
 }
+.pub-component{
+    width: 25%;
+}
 .publicite{
     display: flex;
     margin-top: 40px;
@@ -26,6 +29,21 @@
     color: white;
     border: 1px solid #273c75 ;
     background-color: #273c75;
+}
+@media (max-width: 768px){
+    .product-list{
+        width: 100%;
+        justify-content:center;
+    }
+    .items{
+        width: 50%;
+    }
+    .pub-component{
+        width: 0%;
+    }
+    .btn{
+        margin-left: 50%;
+    }
 }
 @media (min-width: 768px) and (max-width:992px){
     .items{

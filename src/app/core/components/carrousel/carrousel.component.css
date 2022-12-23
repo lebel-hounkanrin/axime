@@ -14,3 +14,11 @@
         height: 200px;
     }
 }
+@media (max-width: 768px){
+    .carousel-img{
+        height: 100px;
+    }
+    .bi-chevron-double-left, .bi-chevron-double-right{
+        font-size: 1.1em;
+    }
+}

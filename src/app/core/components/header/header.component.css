@@ -92,3 +92,61 @@ input:focus {
     top: 15px;
     font-weight: bold;
 }
+
+@media (max-width: 992px) {
+    #searchbar{
+        order: 2;
+        width: 100%;
+        margin-left: 0;
+    }
+    .icon-text{
+        width: 0;
+        display: none;
+    }
+    .header{
+        padding-top: 10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        height: min-content;
+    }
+    .header-title{
+        order: 0;
+        width: 50%;
+        margin-left: 5px;
+        font-size: medium;
+    }
+    .header-link{
+        order: 1;
+        margin-right: 0;
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #header-link-elt-1 {
+        margin-left: 25%;
+        margin-right: 0;
+        width: 50%;
+        text-align: right;
+    }
+    #header-link-elt-2 {
+        margin-left: 5%;
+        width: 10%;
+        text-align: right;
+    }
+
+    .bi-search{
+        font-size: 11px;
+     }
+     
+     .bi-cart3{
+        margin-right: 0;
+         font-size: 18px;
+         color: white;
+     }
+     
+     .bi-person{
+         font-size: 19px;
+         color: white;
+     }
+}

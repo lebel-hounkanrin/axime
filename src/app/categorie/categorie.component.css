@@ -1,6 +1,6 @@
 .categorie {
     display: flex;
-    width: 140px;
+    width: 100%;
     height: 140px;
     margin-top: 40px;
     background-color: #273c75;
@@ -9,6 +9,11 @@
     font-size: 15px;
     align-items: center;
     justify-content: center;
+}
+.categorie-name{
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
 }
 
 .categorie:hover{
@@ -27,6 +32,21 @@
         font-size: 15px;
         align-items: center;
         justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width:992px){
+    .categorie {
+        display: flex;
+        height: 15vh;
+        margin-top: 40px;
+        background-color: #273c75;
+        border-radius: 0px;
+        color: white;
+        font-size: 0.5em;
+        align-items: center;
+        justify-content: center; 
         text-align: center;
     }
 }
