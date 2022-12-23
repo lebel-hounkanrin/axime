@@ -42,7 +42,8 @@
         width: 0%;
     }
     .btn{
-        margin-left: 50%;
+        width: inherit;
+        margin-left: 25%;
     }
 }
 @media (min-width: 768px) and (max-width:992px){
