@@ -53,10 +53,17 @@ li{
 @media (min-width: 768px) and (max-width:1200px){
     .social-media{
     width: 100%;
-    justify-content: space-around;
+    justify-content:center;
     margin: auto;
     }
     .footer {
         font-size: 12px;
+    }
+    .social-media i {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .title-infos-footer{
+        font-size: 14px;
     }
 }

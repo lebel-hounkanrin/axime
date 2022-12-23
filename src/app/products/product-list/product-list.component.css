@@ -2,14 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     width: 75%;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-right: 0;
+    padding-right: 0;
 }
 .publicite{
     display: flex;
     margin-top: 40px;
+    margin-right: 0;
+    padding-right: 0;
 }
 .btn{
-    margin-left: 750px;
+    margin-left: 50%;
     margin-top: 20px;
     border: 1px solid #273c75;
     color: #273c75;
@@ -23,9 +27,25 @@
     border: 1px solid #273c75 ;
     background-color: #273c75;
 }
-
-@media (min-width: 768px) and (max-width:1200px){
+@media (min-width: 768px) and (max-width:992px){
+    .items{
+        width: 30%;
+        font-size: 0.8em;
+    }
     .btn{
-        margin-left: 350px;
+        margin-left: 50%;
+    }
+}
+
+@media(min-width: 992px){
+    .items{
+        width: 30%;
+        font-size: 1.1em;
+    }
+    .btn{
+        margin-left: 50%;
+    }
+    .product-list{
+        justify-content: space-evenly;
     }
 }

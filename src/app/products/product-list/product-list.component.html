@@ -2,7 +2,7 @@
     <app-publicite></app-publicite>
     <div class="product-list">
         <app-single-product *ngFor="let product of products" [product]="product.product"
-        (addToCart)="onAddToCart(product.product)"></app-single-product>
+        (addToCart)="onAddToCart(product.product)" class="items"></app-single-product>
     </div>
 </div>
 <button class="btn" (click)="getMore()">Voir plus d'offres</button>
