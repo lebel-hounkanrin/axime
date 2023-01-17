@@ -7,6 +7,7 @@ export class Product{
     description!: string;
     unity!:string;
     quantity: number = 1;
+    productImage?: string;
 }
 export class Stock{
     product!: Product;

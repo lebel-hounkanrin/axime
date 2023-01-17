@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/core/services/product.service';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
+  baseImageUrl = "http://127.0.0.1:3000/"
   selectProduct!: any[];
   @Input()product!: Product;
   @Output() addToCart = new EventEmitter<Product>();

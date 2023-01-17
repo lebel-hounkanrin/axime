@@ -1,10 +1,14 @@
 <div class="card" >
-    <img src="../../assets/images/prod.jpg" class="card-img" alt="...">
+  <div class="card-img" *ngIf="product.productImage">
+    <img *ngIf="product.productImage" [src]="baseImageUrl+product.productImage" class="card-img" alt="...">
+  </div>
+  <div class="card-img" *ngIf="!product.productImage">
+    <img src="../../../assets/images/1.png" class="card-img" alt="...">
+  </div>
       <h3 class="card-title">{{product.name}}</h3>
       <p class="card-text text-description">{{product.description}}</p>
       <p class="card-text price pb-2">
         <span class="product-price">{{product.sell_price}} FCFA</span>
         <span><button class="addProductBtn" (click)="addProductToBasket(product)">Ajouter au panier</button></span>  
-      </p>
-      
+      </p> 
   </div>
