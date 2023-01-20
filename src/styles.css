@@ -2,4 +2,5 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 body{
     background-color: #EFEFEF !important;
+    width: 100%;
 }

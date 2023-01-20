@@ -1,17 +1,16 @@
 <div class="header">
     <h1 class="header-title">Achagro</h1>
     <div id="searchbar">
-        <input type="text" placeholder="Qu'est ce qui vous ferait plaisir ?">
-        <button class="btn"><i class="bi bi-search"></i></button>
+        <input type="text" placeholder="Qu'est ce qui vous ferait plaisir ?" [(ngModel)]="tag">
+        <button class="btn" (click)="searchProduct()"><i class="bi bi-search"></i></button>
     </div>
     <div class="header-link">
         <div id="header-link-elt-1">
-            
-            <a href="signin"><i class="bi bi-person"></i>Compte</a>
+            <a href="signin"><i class="bi bi-person"></i><span class="icon-text">Compte</span></a>
         </div>
         <div id="header-link-elt-2"> 
             <span class="article-counter" *ngIf="products.length>0">{{products.length}}</span>
-            <a routerLink="panier"> <i class="bi bi-cart3"></i>Panier</a>
+            <a routerLink="panier"> <i class="bi bi-cart3"></i><span class="icon-text">Panier</span></a>
         </div>
     </div>
 </div>

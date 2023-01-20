@@ -131,3 +131,42 @@ h4{
 .country-options input{
     width: 66%;
 }
+.button-group{
+    padding-top: 20px;
+}
+
+@media (min-width: 768px) and (max-width:1200px){
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 60%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 60%;
+    }
+}
+
+@media (max-width:992px){
+    .logo{
+        width: inherit;
+        margin-left: auto;
+    }
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 90%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 90%;
+    }
+}

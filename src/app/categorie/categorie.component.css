@@ -1,11 +1,50 @@
 .categorie {
-    width: 140px;
-    height: 140px;
+    display: flex;
+    width: 100%;
+    height: 100%;
     margin-top: 40px;
     background-color: #273c75;
     border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
 }
-
 .categorie:hover{
     box-shadow: 0px 0px 10px 10px #d1d8e0;
+}
+
+@media (min-width: 768px) and (max-width:1200px){
+    .categorie {
+        display: flex;
+        width: 90px;
+        height: 90px;
+        margin-top: 40px;
+        background-color: #273c75;
+        border-radius: 20px;
+        color: white;
+        font-size: 15px;
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width:992px){
+    .categorie{
+        width: 100%;
+        margin: 0px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px){
+    .categorie{
+        margin: 5px;
+        font-size: 0.8em;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    } 
 }

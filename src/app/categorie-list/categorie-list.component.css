@@ -1,5 +1,38 @@
 .categories{
-    margin: 0 20px;
+    margin: 0 20px 120px 0;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+.categorie-item{
+    width: 200px;
+    height: 200px;
+} 
+
+@media (max-width:992px){
+    .categories{
+        justify-content: flex-start;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    .categorie-item{
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (min-width: 768px){
+    .categories{
+        justify-content: space-evenly;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    .categorie-item{
+        width: 200px;
+        height: 200px;
+    }
 }

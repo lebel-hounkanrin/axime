@@ -1,8 +1,16 @@
 .articles {
-    width: 70%;
+    width: 90%;
+}
+.articles-panier-container{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.articles-panier{
+    width: 75%;
 }
 .total-price{
-    width: 20%;
+    width: 25%;
     position: absolute;
     right: 50px;
     top: 100px;
@@ -11,21 +19,31 @@
 }
 
 .card-btn{
-    border: 2px solid #2ecc71;
-    color: black;
-    background-color: white;
+    border: 2px solid #273c75;
+    color: white;
+    background-color: #273c75;
     border-radius: 20px;
-    font-size: 1em;
-    padding: 10px;
+    font-size: 0.8em;
+    padding: 8px;
     position: absolute;
-    bottom: 5px;
+    bottom:15px;
     left:40px;
     right: 40px;
 }
 .card-btn:hover{
     color: white;
-    border: 2px solid #2ecc71;
-    background-color: #2ecc71;
+    border: 2px solid #142c6e;
+    background-color: #142c6e;
+
+}
+.price{
+    color: red;
+    font-weight: 700;
+}
+.recap-text{
+   position: absolute;
+   top: -50px;
+    left: -5px;
 }
 .total-price span {
     color: red;
@@ -33,18 +51,77 @@
     position: absolute;
     right: 10px
 }
-.remove-btn{
-    border: 2px solid #2ecc71;
-    color: white;
-    background-color: #2ecc71;
-    border-radius: 20px;
-    font-size: 1em;
+.banner{
+    margin-top: 3px;
+    margin-bottom: 25px;
+    width: 90%;
+    height: 50px;
+    background-color: #fafafa;
+}
+.articles-img{
+    width: 250px;
+    height: 180px;
+}
+.card-link{
+    display: flex;
+    justify-content: flex-end;
+    width: inherit;
+    margin-right: 0px;
+}
+.quantityInput{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.removeArticleLink{
+    color: #878787;
+    text-decoration: none;
+}
+.back-box{
+    width: 25%;
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    right: 50px;top: 310px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
 }
-.remove-btn:hover{
-    color: #2ecc71;
-    border: 2px solid #EFEFEF;
-    background-color: #EFEFEF;
+
+.back-button{
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 85%;
+    color: #273c75;
+    background-color: white;
+    border-color: #273c75;
+    border: 1px solid #273c75;
+    border-radius: 20px;
+    font-size: 0.8em;
+    padding: 8px;
 }
+.back-button:hover{
+    color: white;
+    background-color: #273c75;
+    border-color: white;
+}
+
+@media (min-width: 768px) and (max-width:992px){
+    .articles-panier-container{
+        margin-left: 10px;
+    }
+    .items{
+        width: 30%;
+        font-size: 0.8em;
+    }
+    .btn{
+        margin-left: 50%;
+    }
+}
+
+@media  (min-width:992px){
+    .articles-panier-container{
+        margin-left: 10px;
+    }
+}
+
+
