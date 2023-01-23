@@ -3,10 +3,11 @@ import { BasketStore } from './../models/basket-store.interface';
 import { Product } from './../models/product.model';
 import { Injectable, Optional, SkipSelf } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class BasketStoreService{
-url = "http://127.0.0.1:3000/order"
+url = `${environment.baseApiUrl}/order`
 private productsSubject = new BehaviorSubject<Product[]>([]);
 initialState: BasketStore = {
     products$: this.productsSubject.asObservable()

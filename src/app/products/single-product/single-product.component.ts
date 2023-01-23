@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductService } from 'src/app/core/services/product.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-single-product',
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/core/services/product.service';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
-  baseImageUrl = "http://127.0.0.1:3000/"
+  baseImageUrl = `${environment.baseApiUrl}`
   selectProduct!: any[];
   @Input()product!: Product;
   @Output() addToCart = new EventEmitter<Product>();

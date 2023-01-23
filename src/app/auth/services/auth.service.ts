@@ -2,10 +2,11 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 import { UserRegistrationInput } from './../models/user.models';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {
-    private url = "http://127.0.0.1:3000";
+    private url = environment.baseApiUrl;
     private currentUserSubject!: BehaviorSubject<any>;
     public currentUser!: Observable<any>;
     constructor(private http : HttpClient){

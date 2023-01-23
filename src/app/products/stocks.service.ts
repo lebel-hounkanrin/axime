@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
+import { environment } from 'src/environments/environment';
 import { Stocks } from './store/stocks';
 
 @Injectable({providedIn: "root"})
 export class StocksService{
     constructor(private http: HttpClient){}
-    private _url = "http://localhost:3000";
+    private _url = `${environment.baseApiUrl}`;
     limit = 6;
     skip=0;
     get(){
