@@ -11,6 +11,7 @@ import { increaseQuantity } from '../products/store/product.action';
 import { selectStocks } from '../products/store/stocks.selector';
 import { Stocks } from '../products/store/stocks';
 import { basketInitialState } from '../store/basket/basket.reducer';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-basket',
@@ -18,6 +19,7 @@ import { basketInitialState } from '../store/basket/basket.reducer';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent implements OnInit, DoCheck {
+  baseImageUrl = `${environment.baseApiUrl}/`
   products!: Product[];
   price: number = 0;
   missedProductName : Product = new Product();
