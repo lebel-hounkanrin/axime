@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
-  baseImageUrl = `${environment.baseApiUrl}`
+  baseImageUrl = `${environment.baseApiUrl}/`
   selectProduct!: any[];
   @Input()product!: Product;
   @Output() addToCart = new EventEmitter<Product>();
