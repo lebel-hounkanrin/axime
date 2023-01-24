@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BasketStoreService } from '../core/services/basket-store.service';
 import { Product } from '../core/models/product.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-after-payement',
@@ -27,7 +29,8 @@ export class AfterPayementComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private activatedRroute: ActivatedRoute,
     private basketStoreService: BasketStoreService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -43,9 +46,12 @@ export class AfterPayementComponent implements OnInit, OnDestroy {
 
   onSubmit(){
     this.basketStoreService.orderProduct(this.order).subscribe({
-      next: (data) => {
+      next: (data: any) => {
+        const paymentModal = this.modalService.open(PaymentComponent, {centered: true});
+        paymentModal.componentInstance.orderId = data.id
+        paymentModal.componentInstance.total = this.totalAmount
         //this.router.navigateByUrl(`/paid/${this.price}`)
-        this.router.navigateByUrl("/")
+        //this.router.navigateByUrl("/")
       },
       error: async (error: any) => {
         

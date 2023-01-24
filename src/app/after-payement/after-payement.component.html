@@ -19,7 +19,7 @@
                 <label for="oneTimeInWeek">Payer la totalité dans 30 jours </label>
             </div>
         </div>
-        <div class="displayMsg">{{timeLineMessage}}</div>
+        <div class="displayMsg">{{timeLineMessage | currency}}</div>
         <button type="submit" class="card-btn">Payer</button>
     </form>
 </div>

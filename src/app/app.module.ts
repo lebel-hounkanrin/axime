@@ -20,6 +20,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ProductsModule } from './products/products.module';
 import { RecommendationProductsComponent } from './recommendation-products/recommendation-products.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentService } from './core/services/payment.service';
 
 @NgModule({
   declarations: [
@@ -41,11 +43,13 @@ import { RecommendationProductsComponent } from './recommendation-products/recom
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    NgbModule,
     
   ],
   providers: [
     BASKET_STORE_PROVIDERS,
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor,  multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor,  multi: true},
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })
