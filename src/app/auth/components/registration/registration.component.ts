@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,6 +12,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm! : FormGroup;
+  showUserName : boolean =false;
+  showSocityName : boolean = false;
   piecedIdentiteMsg = "Une photo de votre piece d'identité";
   constructor(
     private router: Router, private formBuilder: FormBuilder,
@@ -21,8 +23,16 @@ export class RegistrationComponent implements OnInit {
     this.initRegistrationForm();
     this.registrationForm.get("proprietaireCtrl")?.valueChanges.pipe(
       tap((val) => {
-        if(val === "restaurant" || val === "comerçant"){this.piecedIdentiteMsg = "Charger les photos de la pièce d’identité du gérant"}
-        else {this.piecedIdentiteMsg = "Une photo de votre piece d'identité"}
+        if(val === "restaurant" || val === "comerçant"){
+          this.showUserName = false;
+          this.showSocityName = true;
+          //this.piecedIdentiteMsg = "Charger les photos de la pièce d’identité du gérant"
+        }
+        else {
+          this.showUserName = true;
+          this.showSocityName = false;
+          //this.piecedIdentiteMsg = "Une photo de votre piece d'identité"
+        }
       })
     ).subscribe();
   }
@@ -32,7 +42,9 @@ export class RegistrationComponent implements OnInit {
       phoneNumber: [null, Validators.required],
       proprietaireCtrl: [],
       password: [null, Validators.required],
-      confirmPswd: [null, Validators.required]
+      confirmPswd: [null, Validators.required],
+      firstName: [null, Validators.required],
+      lastName: [null],
     })
   }
 
@@ -42,6 +54,8 @@ export class RegistrationComponent implements OnInit {
             "typeCompte": this.registrationForm.get("proprietaireCtrl")?.value,
             "password": this.registrationForm.get("password")?.value,
             "confirmPassword": this.registrationForm.get("confirmPswd")?.value,
+            "firstName": this.registrationForm.get("firstName")?.value,
+            "lastName": this.registrationForm.get("lastName")?.value
     }).subscribe(d => this.router.navigateByUrl("signin"));
     
 }

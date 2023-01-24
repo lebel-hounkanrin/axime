@@ -4,4 +4,6 @@ export class UserRegistrationInput{
     password!: string;
     passwordConfirm!: string;
     identityCard?: string;
+    fisrtName!: string;
+    lastName?: string
 }
