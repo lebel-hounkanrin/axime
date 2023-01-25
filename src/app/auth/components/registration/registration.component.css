@@ -39,6 +39,12 @@ input:hover, select:hover{
     outline: #273c75;
     border: 1px solid #273c75;
 }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 label{
   margin-left: 25px;
   color: #273c75;

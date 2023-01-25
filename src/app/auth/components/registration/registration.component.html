@@ -48,7 +48,7 @@
         <p>{{piecedIdentiteMsg}}</p>
     </div-->
     <div >
-        <button class="login-button" type="submit" (click)="onSubmitForm()">Créer mon compte</button>
+        <button class="login-button" type="submit" (click)="onSubmitForm()" [disabled]="registrationForm.invalid">Créer mon compte</button>
     </div>
 </div>
 <div class="registration-card">

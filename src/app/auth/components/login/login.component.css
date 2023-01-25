@@ -61,6 +61,12 @@ button{
     background-color: #273c75;
     border-color: white;
 }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 p {
     text-align: right;
     margin-right: 10px;

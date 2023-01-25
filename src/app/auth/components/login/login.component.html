@@ -19,7 +19,7 @@
         <input type="password" id="password" value="passwordpassword" formControlName="password">
     </div>
     <div >
-        <button class="login-button" (click)="onSubmitForm()">Connexion</button>
+        <button class="login-button" (click)="onSubmitForm()" [disabled]="loginForm.invalid">Connexion</button>
     </div>
     <p><a href="">Mot de passe oublié ?</a></p>
 </div>
