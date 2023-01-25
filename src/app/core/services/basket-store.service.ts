@@ -41,6 +41,9 @@ initialState: BasketStore = {
         //     this.productsSubject.next(existingProducts);
         // }
     }
+    clearBasket(){
+        this.productsSubject.next([])
+    }
     removeProductFromBasket(product: Product){
         let existingProducts = [...this.productsSubject.value];
         existingProducts = existingProducts.filter(p => p !== product);

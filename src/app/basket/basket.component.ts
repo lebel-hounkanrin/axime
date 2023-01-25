@@ -12,6 +12,8 @@ import { selectStocks } from '../products/store/stocks.selector';
 import { Stocks } from '../products/store/stocks';
 import { basketInitialState } from '../store/basket/basket.reducer';
 import { environment } from 'src/environments/environment';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-basket',
@@ -33,14 +35,15 @@ export class BasketComponent implements OnInit, DoCheck {
     private basketStoreService: BasketStoreService,
     private formBuilder: FormBuilder,
     private store: Store,
-    private router: Router) { }
+    private router: Router,
+    private modalService: NgbModal
+    ) { }
     stocks! :Stocks[];
     maxValues: {[id: string]: any[]} = {};
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products = products });
     this.store.select(selectStocks).subscribe(data => this.stocks= data);
     this.stocks.map(stock => this.maxValues[stock.product.id] = Array(stock.quantity) )
-    console.log(this.maxValues)
     this.updatePrice()
   }
   ngDoCheck(): void {
@@ -68,8 +71,15 @@ export class BasketComponent implements OnInit, DoCheck {
     this.products.map(prod => {
       order.push({productId: prod.id, product_quantity: prod.quantity});
       basketInitialState.items.push({productId: prod.id, product_quantity: prod.quantity})
-    });
-    this.router.navigateByUrl(`/paid/${this.price}`)
+    }); 
+    this.basketStoreService.orderProduct(order).subscribe((data: any) => {
+      const paymentModalRef = this.modalService.open(PaymentComponent)
+      paymentModalRef.componentInstance.orderId = data.id;
+      paymentModalRef.componentInstance.total = data.total_amount;
+      paymentModalRef.componentInstance.closeModal.subscribe(() =>  paymentModalRef.close())
+
+    })
+    //this.router.navigateByUrl(`/paid/${this.price}`)
     
     /*;
     this.basketStoreService.orderProduct(order).subscribe({
