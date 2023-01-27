@@ -5,7 +5,8 @@ import { BasketStore } from '../../models/basket-store.interface';
 import { StocksService } from 'src/app/products/stocks.service';
 import { selectStocks } from 'src/app/products/store/stocks.selector';
 import { select, Store } from '@ngrx/store';
-import { getProductByTagAPI } from 'src/app/products/store/stocks.action';
+import { getProductByTagAPI, invokeMoreStocksAPI } from 'src/app/products/store/stocks.action';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,7 +30,9 @@ export class HeaderComponent implements OnInit {
 
   searchProduct(){
    this.store.dispatch(getProductByTagAPI({tag_name: this.tag}));
-   this.tag = ''
   }
-
+  goBackHome(){
+    this.tag = ''
+    this.store.dispatch(getProductByTagAPI({tag_name: ""}));
+  }
 }

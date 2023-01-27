@@ -18,7 +18,6 @@ import { interval, Observable, startWith, Subscription, switchMap } from 'rxjs';
 export class ProductListComponent implements OnInit, DoCheck {
   products!: Stock[];
   products$!: Observable<Product>;
-  timeInterval!: Subscription;
   constructor(private productService: ProductService,
     private stocksService: StocksService,
     private basketStoreService:BasketStoreService,
@@ -32,11 +31,6 @@ export class ProductListComponent implements OnInit, DoCheck {
     this.stocks$.subscribe(data => {
       this.products = data
     });
-    this.timeInterval = interval(5000)
-    .pipe(
-      startWith(0),
-      switchMap(() => this.productService.getProduct())
-    ).subscribe(data => this.products = data)
   }
   ngDoCheck(): void {
     let data :any[] = [];

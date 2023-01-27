@@ -1,5 +1,5 @@
 export const CategoryProductEnum = [
-   "cereales", "oleagineux", "fruits", "legumes", "tubercules", "produits speciaux"
+   "cereales", "oleagineux", "fruits", "legumes", "tubercules", "produits speciaux", "produits vivriers", "autres"
 ]
 /*    1: 'cereales',
     2 : "oleagineux",

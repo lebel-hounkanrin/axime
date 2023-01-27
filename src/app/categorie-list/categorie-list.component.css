@@ -1,12 +1,12 @@
 .categories{
-    margin: 0 20px 120px 0;
     display: flex;
-    justify-content: space-around;
+    margin-top: 40px!important;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .categorie-item{
-    width: 200px;
-    height: 200px;
+    width: 155px;
+    height: 155px;
 } 
 
 @media (max-width:992px){
@@ -32,7 +32,7 @@
         margin: 10px;
     }
     .categorie-item{
-        width: 200px;
-        height: 200px;
+        width: 155px;
+        height: 155px;
     }
 }

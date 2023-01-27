@@ -1,8 +1,7 @@
 .product-list{
     display: flex;
     flex-wrap: wrap;
-    width: 75%;
-    justify-content: space-evenly;
+    width: 100%;
     margin-right: 0;
     padding-right: 0;
 }
@@ -58,13 +57,13 @@
 
 @media(min-width: 992px){
     .items{
-        width: 30%;
+        width: 19%;
         font-size: 1.1em;
     }
     .btn{
-        margin-left: 50%;
+        margin-left: 45%;
     }
     .product-list{
-        justify-content: space-evenly;
+        justify-content: center;
     }
 }
