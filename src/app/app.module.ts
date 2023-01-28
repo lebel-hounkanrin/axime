@@ -22,6 +22,7 @@ import { ProductsModule } from './products/products.module';
 import { RecommendationProductsComponent } from './recommendation-products/recommendation-products.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaymentService } from './core/services/payment.service';
+import { RecordVoiceComponent } from './record-voice/record-voice.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaymentService } from './core/services/payment.service';
     CategorieListComponent,
     BasketComponent,
     AfterPayementComponent,
-    RecommendationProductsComponent
+    RecommendationProductsComponent,
+    RecordVoiceComponent
   ],
   imports: [
     BrowserModule,
