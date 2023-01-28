@@ -9,6 +9,7 @@
     font-size: 15px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .categorie:hover{
     box-shadow: 0px 0px 10px 10px #d1d8e0;
