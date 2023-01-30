@@ -23,6 +23,7 @@ import { RecommendationProductsComponent } from './recommendation-products/recom
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaymentService } from './core/services/payment.service';
 import { RecordVoiceComponent } from './record-voice/record-voice.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RecordVoiceComponent } from './record-voice/record-voice.component';
     BasketComponent,
     AfterPayementComponent,
     RecommendationProductsComponent,
-    RecordVoiceComponent
+    RecordVoiceComponent,
+    PromotionsComponent
   ],
   imports: [
     BrowserModule,

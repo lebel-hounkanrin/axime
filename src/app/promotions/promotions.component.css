@@ -1,0 +1,63 @@
+.main{
+    display: flex;
+    position: relative;
+}
+.products{
+    margin-left: 10px;
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+}
+.icon{
+    width: 30px;
+    height: 70px;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-right{
+    z-index: 1;
+    top: 45%;
+    right: 0px;
+}
+.icon-left{
+    z-index: 1;
+    top: 45%;
+    left: 0px;
+}
+.bi{
+    font-size: 30px;
+    font-weight: bold;
+}
+.move-right{
+    transform: translateX(100%);
+    -webkit-transform:translateX(-50%);
+}
+.animeRight{
+    animation-duration: 3s;
+    animation-name: scrollR;
+}
+.animeLeft{
+    animation-duration: 3s;
+    animation-name: scrollL;
+}
+@keyframes scrollR{
+    from{
+
+    }
+    to{
+        transform: translateX(100%);
+        -webkit-transform:translateX(-50%); 
+    }
+}
+@keyframes scrollL{
+    from{
+
+    }
+    to{
+        transform: translateX(-100%);
+        -webkit-transform:translateX(50%); 
+    }
+}
