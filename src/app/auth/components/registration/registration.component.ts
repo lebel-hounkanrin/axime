@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RecordVoiceComponent } from 'src/app/record-voice/record-voice.component';
 
 @Component({
   selector: 'app-registration',
@@ -15,9 +17,10 @@ export class RegistrationComponent implements OnInit {
   showUserName : boolean =false;
   showSocityName : boolean = false;
   piecedIdentiteMsg = "Une photo de votre piece d'identité";
+  userLocalisation!: Blob;
   constructor(
     private router: Router, private formBuilder: FormBuilder,
-    private authService: AuthService, private http : HttpClient) { }
+    private authService: AuthService, private http : HttpClient, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.initRegistrationForm();
@@ -49,13 +52,24 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmitForm() {
+    const formData = new FormData();
+    formData.append("userLocalisation", this.userLocalisation)
+    formData.append("phoneNumber", this.registrationForm.get("phoneNumber")?.value)
+    formData.append("typeCompte", this.registrationForm.get("typeCompte")?.value)
+    formData.append("password", this.registrationForm.get("password")?.value)
+    formData.append("confirmPassword", this.registrationForm.get("confirmPassword")?.value)
+    formData.append("firstName", this.registrationForm.get("firstName")?.value),
+    formData.append("lastName", this.registrationForm.get("lastName")?.value)
+    console.log(formData.get("proprietaireCtrl"))
     this.authService.register({
             "phoneNumber": this.registrationForm.get("phoneNumber")?.value,
             "typeCompte": this.registrationForm.get("proprietaireCtrl")?.value,
             "password": this.registrationForm.get("password")?.value,
             "confirmPassword": this.registrationForm.get("confirmPswd")?.value,
             "firstName": this.registrationForm.get("firstName")?.value,
-            "lastName": this.registrationForm.get("lastName")?.value
+            "lastName": this.registrationForm.get("lastName")?.value,
+            "userLocalisation": this.userLocalisation
+            //formData
     }).subscribe(d => this.router.navigateByUrl("signin"));
     
 }
@@ -85,4 +99,17 @@ export class RegistrationComponent implements OnInit {
     // Prevent default behavior (Prevent file from being opened)
     ev.preventDefault();
   }
+
+  startRecording(){
+    const recordModal = this.modalService.open(RecordVoiceComponent, {centered: true});
+    recordModal.componentInstance.endOfRecording.subscribe((blob: any) => {
+      this.userLocalisation = blob;
+      let reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = (() => {
+        console.log(reader.result)
+      })
+      console.log(this.userLocalisation)
+    })
+}
 }

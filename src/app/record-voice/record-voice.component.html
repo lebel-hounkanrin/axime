@@ -1,1 +1,6 @@
-<p>record-voice works!</p>
+<div class="card main">
+    <p>Commencer l'enregistrement</p>
+    <button class="btn start-btn" (click)="startRecording()" *ngIf="!isRecording">Commencer</button>
+    <button class="btn start-btn" (click)="stopRecording()" *ngIf="isRecording">Arrếter</button>
+</div>
+<audio src="" class="audio"></audio>

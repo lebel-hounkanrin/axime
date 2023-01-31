@@ -1,0 +1,13 @@
+.main {
+    margin: auto;
+    width: 50%;
+}
+
+.start-btn {
+    font-size: small;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: auto;
+}

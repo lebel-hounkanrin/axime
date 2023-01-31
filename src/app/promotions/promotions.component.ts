@@ -14,16 +14,5 @@ export class PromotionsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getProduct().subscribe(data => this.products = data);
   }
-
-  moveRight(){
-    const productDom = document.getElementsByClassName("products")[0];
-    productDom.classList.add("animeRight");
-    
-  }
-
-  moveLeft(){
-    const productDom = document.getElementsByClassName("products")[0];
-    productDom.classList.add("animeLeft");
-
-  }
+  
 }

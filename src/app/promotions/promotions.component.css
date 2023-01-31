@@ -7,6 +7,12 @@
     display: flex;
     gap: 20px;
     overflow: scroll;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    height: 0x;
+    width: 0px;
+    background: #fff;
 }
 .icon{
     width: 30px;
