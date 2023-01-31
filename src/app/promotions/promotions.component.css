@@ -2,17 +2,11 @@
     display: flex;
     position: relative;
 }
-.products{
-    margin-left: 10px;
+.slide{
+    margin: 0 20px;
     display: flex;
     gap: 20px;
-    overflow: scroll;
-    scrollbar-width: none;
-}
-::-webkit-scrollbar {
-    height: 0x;
-    width: 0px;
-    background: #fff;
+    overflow: hidden;
 }
 .icon{
     width: 30px;
@@ -37,33 +31,6 @@
     font-size: 30px;
     font-weight: bold;
 }
-.move-right{
-    transform: translateX(100%);
-    -webkit-transform:translateX(-50%);
-}
-.animeRight{
-    animation-duration: 3s;
-    animation-name: scrollR;
-}
-.animeLeft{
-    animation-duration: 3s;
-    animation-name: scrollL;
-}
-@keyframes scrollR{
-    from{
-
-    }
-    to{
-        transform: translateX(100%);
-        -webkit-transform:translateX(-50%); 
-    }
-}
-@keyframes scrollL{
-    from{
-
-    }
-    to{
-        transform: translateX(-100%);
-        -webkit-transform:translateX(50%); 
-    }
+.slide:last-child{
+    margin-right: 0px;
 }

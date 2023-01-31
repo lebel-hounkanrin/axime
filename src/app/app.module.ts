@@ -24,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaymentService } from './core/services/payment.service';
 import { RecordVoiceComponent } from './record-voice/record-voice.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { PromotionsComponent } from './promotions/promotions.component';
     AfterPayementComponent,
     RecommendationProductsComponent,
     RecordVoiceComponent,
-    PromotionsComponent
+    PromotionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,7 @@ import { PromotionsComponent } from './promotions/promotions.component';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     NgbModule,
+    NgxPaginationModule
     
   ],
   providers: [
