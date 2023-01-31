@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-
+declare var MediaRecorder: any;
 @Component({
   selector: 'app-record-voice',
   templateUrl: './record-voice.component.html',
@@ -11,6 +11,7 @@ export class RecordVoiceComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  audioContext =  new (AudioContext)({sampleRate: 16000});
   endOfRecording: EventEmitter<any> = new EventEmitter();
   isRecording = false
   chunks: any[] = [];
@@ -21,9 +22,10 @@ export class RecordVoiceComponent implements OnInit {
       navigator.mediaDevices.getUserMedia({
         audio: true
       }).then(stream => {
-        this.mediaRecorder = new MediaRecorder(stream);
+        this.mediaRecorder = new MediaRecorder(stream, {
+          mimeType: 'audio/webm',
+        });
         this.mediaRecorder.start();
-        this.mediaRecorder.ondataavailable = (e) => {this.chunks.push(e)}
       }).catch((err) => {
         console.error(`The following getUserMedia error occurred: ${err}`);
       })
@@ -32,14 +34,14 @@ export class RecordVoiceComponent implements OnInit {
       console.log("getUserMedia not supported on your browser!");
     }
   }
-  stopRecording(){
+  async stopRecording(){
+    this.mediaRecorder.ondataavailable = (e) => {
+      this.endOfRecording.emit(e.data)
+    }
     this.mediaRecorder.stop();
-    const blob = new Blob(this.chunks, {type: "audio/webm;codecs=opus"});
-    this.chunks = [];
-    //const audioURL = window.URL.createObjectURL(blob);
     this.isRecording = false;
-    //const audio = new Audio(audioURL)
-    this.endOfRecording.emit(blob)
+    this.chunks = [];
+   // 
   }
   
 }

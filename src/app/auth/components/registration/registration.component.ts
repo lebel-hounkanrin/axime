@@ -52,16 +52,18 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmitForm() {
+    console.log(this.registrationForm.value)
     const formData = new FormData();
     formData.append("userLocalisation", this.userLocalisation)
     formData.append("phoneNumber", this.registrationForm.get("phoneNumber")?.value)
-    formData.append("typeCompte", this.registrationForm.get("typeCompte")?.value)
+    formData.append("typeCompte", this.registrationForm.get("proprietaireCtrl")?.value)
     formData.append("password", this.registrationForm.get("password")?.value)
-    formData.append("confirmPassword", this.registrationForm.get("confirmPassword")?.value)
+    formData.append("confirmPassword", this.registrationForm.get("confirmPswd")?.value)
     formData.append("firstName", this.registrationForm.get("firstName")?.value),
     formData.append("lastName", this.registrationForm.get("lastName")?.value)
-    console.log(formData.get("proprietaireCtrl"))
-    this.authService.register({
+    //console.log(formData.values())
+    this.authService.register(  formData
+      /*{
             "phoneNumber": this.registrationForm.get("phoneNumber")?.value,
             "typeCompte": this.registrationForm.get("proprietaireCtrl")?.value,
             "password": this.registrationForm.get("password")?.value,
@@ -69,8 +71,8 @@ export class RegistrationComponent implements OnInit {
             "firstName": this.registrationForm.get("firstName")?.value,
             "lastName": this.registrationForm.get("lastName")?.value,
             "userLocalisation": this.userLocalisation
-            //formData
-    }).subscribe(d => this.router.navigateByUrl("signin"));
+    }*/
+    ).subscribe(d => this.router.navigateByUrl("signin"));
     
 }
   goToLoginPage(){
@@ -103,13 +105,14 @@ export class RegistrationComponent implements OnInit {
   startRecording(){
     const recordModal = this.modalService.open(RecordVoiceComponent, {centered: true});
     recordModal.componentInstance.endOfRecording.subscribe((blob: any) => {
-      this.userLocalisation = blob;
-      let reader = new FileReader();
+      this.userLocalisation = new Blob([blob], {type: "audio/webm;codecs=opus"});;
+      /*let reader = new FileReader();
       reader.readAsDataURL(blob);
       reader.onloadend = (() => {
         console.log(reader.result)
       })
-      console.log(this.userLocalisation)
+      */
+     console.log(this.userLocalisation)
     })
 }
 }

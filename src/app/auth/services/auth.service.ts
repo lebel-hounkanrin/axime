@@ -22,7 +22,7 @@ export class AuthService {
 
     register(userInput: any){
         console.log(userInput)
-        return this.http.post(`${this.url}/auth/register`, userInput, {headers: {'Content-Type': 'multipart/form-data'}})
+        return this.http.post(`${this.url}/auth/register`, userInput)
     }
 
     login(userInput: any): Observable<any>{
