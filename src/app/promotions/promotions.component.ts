@@ -8,23 +8,32 @@ import { ProductService } from '../core/services/product.service';
   styleUrls: ['./promotions.component.css']
 })
 export class PromotionsComponent implements OnInit {
-  @ViewChild("ngcarousel", {static: true}) ngcarousel!: NgbCarousel
+  @ViewChild("ngcarousel", {static: true}) ngcarousel!: NgbCarousel;
+  items = 5
+  nbSlide! : any[];
   images =[];
   products: any[] =[];
+  p: number = 1;
   constructor(private productsService: ProductService, private config: NgbCarouselConfig) { 
     this.config.showNavigationArrows = false;
     this.config.showNavigationIndicators = false;
   }
 
   ngOnInit(): void {
-    this.productsService.getProduct().subscribe(data => this.products = data);
+    this.productsService.getProduct().subscribe(data => {
+      this.products = data;
+      this.nbSlide= Array(Math.round(this.products.length / 5)+1)
+    });
+
   }
-  display(e: NgbSlideEvent){
+  changePagination(e: NgbSlideEvent){
+
   }
   goToNext(){
     this.ngcarousel.next()
   }
   goToPrev(){
-    this.ngcarousel.prev()
+    this.ngcarousel.prev();
+
   }
 }

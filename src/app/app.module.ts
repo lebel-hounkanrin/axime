@@ -25,6 +25,7 @@ import { PaymentService } from './core/services/payment.service';
 import { RecordVoiceComponent } from './record-voice/record-voice.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CustomPaginationPipe } from './custom-pagination.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RecommendationProductsComponent,
     RecordVoiceComponent,
     PromotionsComponent,
+    CustomPaginationPipe,
   ],
   imports: [
     BrowserModule,
