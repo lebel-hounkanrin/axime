@@ -9,7 +9,10 @@ export class ProductService {
     constructor(private http: HttpClient){}
     private _url = `${environment.baseApiUrl}/stock`
     getProduct(){
-        return this.http.get<Stock[]>(`${this._url}/6`)
+        return this.http.get<Stock[]>(`${this._url}/10`)
+    }
+    getAllProduct(){
+        return this.http.get<Stock[]>(`${this._url}/promo`)
     }
     
 }

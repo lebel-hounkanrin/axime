@@ -1,11 +1,11 @@
 .separateur{
     margin-top: 30px;
     width: 100%;
-    height: 70px;
+    height: 100px;
     background-color: #273c75;
 }
 .info{
     width: 100%;
-    height: 700px;
+    height: 0px;
     background-color: white;
 }

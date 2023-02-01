@@ -1,9 +1,4 @@
 <div class="main">
-    <!--ngb-carousel>
-        <ng-template ngbSlide *ngFor="let product of products">
-            <app-single-product  [product]="product.product"></app-single-product>
-        </ng-template>
-    </ngb-carousel-->
     <div class="icon icon-left" (click)="goToPrev()">
         <i class="bi bi-chevron-left"></i>
     </div>
@@ -13,11 +8,7 @@
                 <app-single-product *ngFor="let product of products | customPagination: items" [product]="product.product"></app-single-product>
             </div>
         </ng-template>
-        <!--ng-template ngbSlide>
-            <div class="slide">
-                <app-single-product *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: 2 }" [product]="product.product"></app-single-product>
-            </div>
-        </ng-template-->
+
     </ngb-carousel>
     <div class="icon icon-right" (click)="goToNext()">
         <i class="bi bi-chevron-right"></i>

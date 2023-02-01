@@ -20,15 +20,12 @@ export class PromotionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService.getProduct().subscribe(data => {
+    this.productsService.getAllProduct().subscribe(data => {
       this.products = data;
-      this.nbSlide= Array(Math.round(this.products.length / 5)+1)
+      this.nbSlide= Array(Math.trunc(this.products.length / this.items));
     });
-
   }
-  changePagination(e: NgbSlideEvent){
-
-  }
+  changePagination(e: NgbSlideEvent){ }
   goToNext(){
     this.ngcarousel.next()
   }
