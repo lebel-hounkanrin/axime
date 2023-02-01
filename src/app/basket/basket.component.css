@@ -1,3 +1,7 @@
+#main{
+    display: flex;
+    justify-content: space-between;
+}
 .articles {
     width: 90%;
 }
@@ -6,16 +10,28 @@
     margin-left: 100px;
 }
 
-.articles-panier{
+.allproducts{
     width: 75%;
 }
-.total-price{
+.price-side-nav{
     width: 25%;
-    position: absolute;
-    right: 50px;
-    top: 100px;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column  ;
+    gap: 5px;
+    margin-right: 20px;;
+}
+.total-price{
+    width: 100%;
     height: 200px;
     padding: 20px;
+}
+.back-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
 }
 
 .card-btn{
@@ -40,11 +56,7 @@
     color: red;
     font-weight: 700;
 }
-.recap-text{
-   position: absolute;
-   top: -50px;
-    left: -5px;
-}
+
 .total-price span {
     color: red;
     font-weight: 700;
@@ -59,8 +71,8 @@
     background-color: #fafafa;
 }
 .articles-img{
-    width: 250px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
 }
 .card-link{
     display: flex;
@@ -77,15 +89,7 @@
     color: #878787;
     text-decoration: none;
 }
-.back-box{
-    width: 25%;
-    position: absolute;
-    right: 50px;top: 310px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #fff;
-}
+
 
 .back-button{
     border: 1px solid white;
