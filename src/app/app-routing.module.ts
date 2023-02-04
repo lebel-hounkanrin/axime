@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "", pathMatch:"full", component: MainComponent},
   {path: "signin", component: LoginComponent},
   {path: "signup", component: RegistrationComponent},
-  {path: "panier", component: BasketComponent, /*canActivate: [AuthGuard]*/},
+  {path: "panier", component: BasketComponent, canActivate: [AuthGuard]},
   //{path: "paid/:total", component: AfterPayementComponent, canActivate: [AuthGuard]}
   
 ];
