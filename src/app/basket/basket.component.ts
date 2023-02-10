@@ -38,12 +38,11 @@ export class BasketComponent implements OnInit, DoCheck {
     private router: Router,
     private modalService: NgbModal
     ) { }
-    stocks! :Stocks[];
+    stocks! :Product[];
     maxValues: {[id: string]: any[]} = {};
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products = products });
     this.store.select(selectStocks).subscribe(data => this.stocks= data);
-    this.stocks.map(stock => this.maxValues[stock.product.id] = Array(stock.quantity) )
     this.updatePrice()
   }
   ngDoCheck(): void {

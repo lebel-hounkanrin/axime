@@ -1,7 +1,7 @@
 export interface Stocks{
     id: string;
     product: Products;
-    quantity: number
+    quantity: number 
 }
 
 export interface Products{

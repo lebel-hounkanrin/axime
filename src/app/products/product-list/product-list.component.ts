@@ -16,10 +16,9 @@ import { interval, Observable, startWith, Subscription, switchMap } from 'rxjs';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit, DoCheck {
-  products!: Stock[];
+  products!: Product[];
   products$!: Observable<Product>;
   constructor(private productService: ProductService,
-    private stocksService: StocksService,
     private basketStoreService:BasketStoreService,
     private store: Store
     ) { }

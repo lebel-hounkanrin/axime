@@ -3,7 +3,7 @@ import { act, Actions, createEffect, ofType } from "@ngrx/effects";
 import { select, Store } from "@ngrx/store";
 import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from "rxjs";
 import { StocksService } from "../stocks.service";
-import { getProductByTagAPI, getProductByTagSuccess, getStocksByCategoryAPI, getStocksByCategorySucess, invokeMoreStocksAPI, invokeStocksAPI, stocksFetchAPISuccess } from "./stocks.action";
+import { getMoreStocksSuccess, getProductByTagAPI, getProductByTagSuccess, getStocksByCategoryAPI, getStocksByCategorySucess, invokeMoreStocksAPI, invokeStocksAPI, stocksFetchAPISuccess } from "./stocks.action";
 import { selectMoreStocks, selectStocks } from "./stocks.selector";
 
 @Injectable()
@@ -34,7 +34,11 @@ export class StocksEffect {
             withLatestFrom(this.store.pipe(select(selectMoreStocks))),
             mergeMap(([, stock]) => {
                 return this.stocksService.getMoreProducts()
-                    .pipe(map((data) => stocksFetchAPISuccess({ stocks: data })))
+                    .pipe(
+                        map(
+                            (data) => getMoreStocksSuccess({ stocks: data })
+                        )
+                    )
             })
         )
     );

@@ -26,6 +26,7 @@ import { RecordVoiceComponent } from './record-voice/record-voice.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomPaginationPipe } from './custom-pagination.pipe';
+import { getMoreProduct } from './products/store/stocks.reducer';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { CustomPaginationPipe } from './custom-pagination.pipe';
     AuthModule,
     ProductsModule,
     SharedModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({getMore: getMoreProduct}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     NgbModule,

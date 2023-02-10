@@ -1,4 +1,5 @@
 import { createAction, props } from "@ngrx/store";
+import { Product } from "src/app/core/models/product.model";
 import { Stocks } from "./stocks";
 
 export const invokeStocksAPI = createAction(
@@ -7,7 +8,7 @@ export const invokeStocksAPI = createAction(
 
 export const stocksFetchAPISuccess = createAction(
     "[Stocks API] Fetch API Succes",
-    props<{stocks: Stocks[]}>()
+    props<{stocks: Product[]}>()
 )
 
 export const invokeMoreStocksAPI = createAction(
@@ -16,7 +17,7 @@ export const invokeMoreStocksAPI = createAction(
 
 export const getMoreStocksSuccess = createAction(
     "[Stocks API] Fetch API Succes",
-    props<{stocks: Stocks[]}>()
+    props<{stocks: Product[]}>()
 )
 
 export const getStocksByCategoryAPI = createAction(
@@ -25,7 +26,7 @@ export const getStocksByCategoryAPI = createAction(
 )
 export const getStocksByCategorySucess = createAction(
     "[Stocks API] Fetch API Succes",
-    props<{stocks: Stocks[]}>()
+    props<{stocks: Product[]}>()
 )
 
 export const getProductByTagAPI = createAction(
@@ -35,5 +36,5 @@ export const getProductByTagAPI = createAction(
 
 export const getProductByTagSuccess = createAction(
     "[Stocks API] Fetch API success",
-    props<{stocks: Stocks[]}>()
+    props<{stocks: Product[]}>()
 )
