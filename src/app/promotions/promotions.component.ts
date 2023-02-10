@@ -37,8 +37,4 @@ export class PromotionsComponent implements OnInit {
   goToPrev(){
     this.ngcarousel.prev();
   }
-  onAddToCart(product:Product): void{
-    console.log("receive")
-    this.basketStoreService.addProductToBasket(product);
-  }
 }

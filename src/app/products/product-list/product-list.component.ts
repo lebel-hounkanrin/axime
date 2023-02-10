@@ -1,14 +1,11 @@
-import { StocksService } from './../stocks.service';
 import { select } from '@ngrx/store';
 import { Store } from '@ngrx/store';
-import { Product, Stock } from './../../core/models/product.model';
+import { Product } from './../../core/models/product.model';
 
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/core/services/product.service';
 import { BasketStoreService } from 'src/app/core/services/basket-store.service';
-import { selctProductByTag, selectMoreStocks, selectStocks } from '../store/stocks.selector';
+import { selctProductByTag,  selectStocks } from '../store/stocks.selector';
 import { invokeMoreStocksAPI, invokeStocksAPI } from '../store/stocks.action';
-import { interval, Observable, startWith, Subscription, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -17,10 +14,7 @@ import { interval, Observable, startWith, Subscription, switchMap } from 'rxjs';
 })
 export class ProductListComponent implements OnInit, DoCheck {
   products!: Product[];
-  constructor(private productService: ProductService,
-    private basketStoreService:BasketStoreService,
-    private store: Store
-    ) { }
+  constructor(private store: Store) { }
     stocks$ = this.store.pipe(select(selectStocks));
     categorie$ = this.store.pipe(select(selctProductByTag));
   ngOnInit(): void {
@@ -39,9 +33,7 @@ export class ProductListComponent implements OnInit, DoCheck {
     }
       
   }
-  onAddToCart(product:Product): void{
-    this.basketStoreService.addProductToBasket(product);
-  }
+
   getMore(){
     this.store.dispatch(invokeMoreStocksAPI());
   }
