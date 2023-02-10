@@ -20,9 +20,8 @@ export class AuthService {
         return this.currentUserSubject.value;
     }
 
-    register(userInput: any){
-        console.log(userInput)
-        return this.http.post(`${this.url}/auth/register`, userInput)
+    register(userInput: FormData){
+        return this.http.post(`${this.url}/customers`, userInput)
     }
 
     login(userInput: any): Observable<any>{

@@ -10,7 +10,7 @@ export class StocksService{
     limit = 10;
     skip=0;
     get(){
-       return this.http.get<Stocks[]>(`${this._url}/stock/${this.limit}`);
+       return this.http.get<Stocks[]>(`${this._url}/products`);
     }
     getMoreProducts(skip=3){
         this.limit +=skip

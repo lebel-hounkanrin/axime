@@ -52,27 +52,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmitForm() {
-    console.log(this.registrationForm.value)
     const formData = new FormData();
-    formData.append("userLocalisation", this.userLocalisation)
+    formData.append("userLocalisation", this.userLocalisation, "userLocalisation")
     formData.append("phoneNumber", this.registrationForm.get("phoneNumber")?.value)
     formData.append("typeCompte", this.registrationForm.get("proprietaireCtrl")?.value)
     formData.append("password", this.registrationForm.get("password")?.value)
     formData.append("confirmPassword", this.registrationForm.get("confirmPswd")?.value)
     formData.append("firstName", this.registrationForm.get("firstName")?.value),
     formData.append("lastName", this.registrationForm.get("lastName")?.value)
-    //console.log(formData.values())
-    this.authService.register(  formData
-      /*{
-            "phoneNumber": this.registrationForm.get("phoneNumber")?.value,
-            "typeCompte": this.registrationForm.get("proprietaireCtrl")?.value,
-            "password": this.registrationForm.get("password")?.value,
-            "confirmPassword": this.registrationForm.get("confirmPswd")?.value,
-            "firstName": this.registrationForm.get("firstName")?.value,
-            "lastName": this.registrationForm.get("lastName")?.value,
-            "userLocalisation": this.userLocalisation
-    }*/
-    ).subscribe(d => this.router.navigateByUrl("signin"));
+    console.log(formData)
+    this.authService.register(formData).subscribe(d => this.router.navigateByUrl("signin"));
     
 }
   goToLoginPage(){
@@ -112,7 +101,6 @@ export class RegistrationComponent implements OnInit {
         console.log(reader.result)
       })
       */
-     console.log(this.userLocalisation)
     })
 }
 }
