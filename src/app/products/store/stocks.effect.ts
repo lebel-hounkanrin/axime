@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { act, Actions, createEffect, ofType } from "@ngrx/effects";
 import { select, Store } from "@ngrx/store";
-import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from "rxjs";
+import { EMPTY, map, mergeMap, switchMap, tap, withLatestFrom } from "rxjs";
 import { StocksService } from "../stocks.service";
 import { getMoreStocksSuccess, getProductByTagAPI, getProductByTagSuccess, getStocksByCategoryAPI, getStocksByCategorySucess, invokeMoreStocksAPI, invokeStocksAPI, stocksFetchAPISuccess } from "./stocks.action";
 import { selectMoreStocks, selectStocks } from "./stocks.selector";
@@ -36,8 +36,10 @@ export class StocksEffect {
                 return this.stocksService.getMoreProducts()
                     .pipe(
                         map(
-                            (data) => getMoreStocksSuccess({ stocks: data })
-                        )
+                            (data) => {
+                                return getMoreStocksSuccess({ stocks: [...data, ...stock] })
+                            }
+                        ),
                     )
             })
         )

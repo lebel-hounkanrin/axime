@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { environment } from 'src/environments/environment';
 import { Product } from '../core/models/product.model';
-import { Stocks } from './store/stocks';
 
 @Injectable({providedIn: "root"})
 export class StocksService{
