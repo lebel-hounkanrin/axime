@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
-import { ProductService } from 'src/app/core/services/product.service';
+import { BasketStoreService } from 'src/app/core/services/basket-store.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,15 +10,13 @@ import { environment } from 'src/environments/environment';
 })
 export class SingleProductComponent implements OnInit {
   baseImageUrl = `${environment.baseApiUrl}/`
-  selectProduct!: any[];
   @Input()product!: Product;
-  @Output() addToCart = new EventEmitter<Product>();
-  constructor(private productService: ProductService) { }
+  constructor(private basketStoreService:BasketStoreService) { }
 
   ngOnInit(): void {
   }
 
   addProductToBasket(product: Product){
-    this.addToCart.emit(product)
+    this.basketStoreService.addProductToBasket(product);
   }
 }

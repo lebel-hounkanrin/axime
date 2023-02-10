@@ -7,12 +7,12 @@ import { environment } from 'src/environments/environment';
 export class ProductService {
     selectedProducts: Product[] = [];
     constructor(private http: HttpClient){}
-    private _url = `${environment.baseApiUrl}/stock`
+    private _url = `${environment.baseApiUrl}/products`
     getProduct(){
-        return this.http.get<Stock[]>(`${this._url}/10`)
+        return this.http.get<Product[]>(`${this._url}/pagination?take=10`)
     }
     getAllProduct(){
-        return this.http.get<Stock[]>(`${this._url}/promo`)
+        return this.http.get<Product[]>(`${this._url}/promo`)
     }
     
 }

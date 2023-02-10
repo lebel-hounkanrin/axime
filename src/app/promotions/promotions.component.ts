@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselConfig, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
+import { Product } from '../core/models/product.model';
+import { BasketStoreService } from '../core/services/basket-store.service';
 import { ProductService } from '../core/services/product.service';
+import { Products } from '../products/store/stocks';
 
 @Component({
   selector: 'app-promotions',
@@ -12,9 +15,11 @@ export class PromotionsComponent implements OnInit {
   items = 5
   nbSlide! : any[];
   images =[];
-  products: any[] =[];
+  products: Products[] =[];
   p: number = 1;
-  constructor(private productsService: ProductService, private config: NgbCarouselConfig) { 
+  constructor(private productsService: ProductService,
+    private basketStoreService: BasketStoreService,
+    private config: NgbCarouselConfig) { 
     this.config.showNavigationArrows = false;
     this.config.showNavigationIndicators = false;
   }
@@ -31,6 +36,9 @@ export class PromotionsComponent implements OnInit {
   }
   goToPrev(){
     this.ngcarousel.prev();
-
+  }
+  onAddToCart(product:Product): void{
+    console.log("receive")
+    this.basketStoreService.addProductToBasket(product);
   }
 }

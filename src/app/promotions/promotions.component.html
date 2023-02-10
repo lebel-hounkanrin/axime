@@ -5,7 +5,7 @@
     <ngb-carousel #ngcarousel (slide)="changePagination($event)">
         <ng-template ngbSlide *ngFor="let nb of nbSlide">
             <div class="slide"  *ngIf="products">
-                <app-single-product *ngFor="let product of products | customPagination: items" [product]="product.product"></app-single-product>
+                <app-single-product *ngFor="let product of products | customPagination: items" [product]="product"></app-single-product>
             </div>
         </ng-template>
 

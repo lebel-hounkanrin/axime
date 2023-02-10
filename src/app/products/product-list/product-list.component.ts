@@ -17,13 +17,11 @@ import { interval, Observable, startWith, Subscription, switchMap } from 'rxjs';
 })
 export class ProductListComponent implements OnInit, DoCheck {
   products!: Product[];
-  products$!: Observable<Product>;
   constructor(private productService: ProductService,
     private basketStoreService:BasketStoreService,
     private store: Store
     ) { }
     stocks$ = this.store.pipe(select(selectStocks));
-    moreStocks$ = this.store.pipe(select(selectMoreStocks));
     categorie$ = this.store.pipe(select(selctProductByTag));
   ngOnInit(): void {
     this.store.dispatch(invokeStocksAPI());
@@ -46,7 +44,6 @@ export class ProductListComponent implements OnInit, DoCheck {
   }
   getMore(){
     this.store.dispatch(invokeMoreStocksAPI());
-    //this.moreStocks$.subscribe(data => console.log(data))
   }
 
 }

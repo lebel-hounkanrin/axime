@@ -16,7 +16,7 @@ import { ProductService } from '../core/services/product.service';
 })
 export class RecommendationProductsComponent implements OnInit {
   items = 5
-  products!: Stock[];
+  products!: Product[];
   nbSlide! : any[];
   @ViewChild("ngcarousel", {static: true}) ngcarousel!: NgbCarousel;
   stocks$ = this.store.pipe(select(selectStocks));
