@@ -53,7 +53,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmitForm() {
     const formData = new FormData();
-    formData.append("userLocalisation", this.userLocalisation, "userLocalisation")
+    //formData.append("userLocalisation", this.userLocalisation, "userLocalisation")
     formData.append("phoneNumber", this.registrationForm.get("phoneNumber")?.value)
     formData.append("typeCompte", this.registrationForm.get("proprietaireCtrl")?.value)
     formData.append("password", this.registrationForm.get("password")?.value)
