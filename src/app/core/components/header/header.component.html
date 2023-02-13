@@ -5,10 +5,28 @@
         <button class="btn" (click)="searchProduct()"><i class="bi bi-search"></i></button>
     </div>
     <div class="header-link">
-        <div id="header-link-elt-1">
+        <!--div id="header-link-elt-1">
             <a href="signin"><i class="bi bi-person"></i><span class="icon-text">Compte</span></a>
+        </div-->
+        <!-- Example split danger button -->
+        <div class="btn-group" id="header-link-elt-1">
+            <button type="button" class="btn">Compte</button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="signin">Se connecter</a></li>
+                <li><a class="dropdown-item" href="signup">Créer un compte</a></li>
+                <!--li><a class="dropdown-item" href="#">Something else here</a></li-->
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="signout">Déconnexion</a></li>
+            </ul>
         </div>
-        <div id="header-link-elt-2"> 
+
+        <div id="header-link-elt-2">
             <span class="article-counter" *ngIf="products.length>0">{{products.length}}</span>
             <a routerLink="panier"> <i class="bi bi-cart3"></i><span class="icon-text">Panier</span></a>
         </div>

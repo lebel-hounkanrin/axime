@@ -151,3 +151,11 @@ input:focus {
          color: white;
      }
 }
+
+#header-link-elt-1 button {
+    background-color: #273c75;
+    color: white;
+}
+.dropdown-item{
+    color: black!important;
+}
