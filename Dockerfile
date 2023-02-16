@@ -7,5 +7,5 @@ EXPOSE 4200
 #CMD npm run build   
 
 FROM nginx:alpine
-COPY --from=node app/dist/achagro-web /usr/share/nginx/html
+COPY --from=node ./dist/achagro-web /usr/share/nginx/html
 
