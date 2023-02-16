@@ -10,6 +10,7 @@ export class StocksService{
     take = 10;
     skip=0;
     get(){
+        console.log('url =>>>>', this._url)
        return this.http.get<Product[]>(`${this._url}/products/pagination?take=${this.take}`);
     }
     getMoreProducts(){
