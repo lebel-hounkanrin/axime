@@ -26,6 +26,7 @@ import { RecordVoiceComponent } from './record-voice/record-voice.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomPaginationPipe } from './custom-pagination.pipe';
+import { SingleProductPromotionComponent } from './single-product-promotion/single-product-promotion.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CustomPaginationPipe } from './custom-pagination.pipe';
     RecordVoiceComponent,
     PromotionsComponent,
     CustomPaginationPipe,
+    SingleProductPromotionComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ export class Product{
     unity!:string;
     quantity: number = 1;
     productImage?: string;
+    discount?: number;
+    isAvailable?: boolean;
 }
 export class Stock{
     product!: Product;

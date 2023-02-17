@@ -1,4 +1,4 @@
-<div class="main">
+<!--div class="main">
     <div class="icon icon-left" (click)="goToPrev()">
         <i class="bi bi-chevron-left"></i>
     </div>
@@ -14,3 +14,6 @@
         <i class="bi bi-chevron-right"></i>
     </div>
 </div>
+</div-->
+<app-single-product-promotion *ngFor="let product of products" [product]="product"
+class="items"></app-single-product-promotion>
