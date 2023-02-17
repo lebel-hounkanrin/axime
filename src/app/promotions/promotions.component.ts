@@ -27,16 +27,18 @@ export class PromotionsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProduct().subscribe(data => {
       this.products = data;
+      console.log(data.length)
       if(data.length <10){
         this.productsService.getRandom(10-data.length).subscribe(data => {
           this.products = [...this.products, ...data]
         })
       }
-      this.nbSlide= Array(Math.trunc(this.products.length / this.items));
+      //this.nbSlide= Array(Math.trunc(this.products.length / this.items));
     });
   }
   changePagination(e: NgbSlideEvent){ }
   goToNext(){
+    console.log(this.products)
     this.ngcarousel.next()
   }
   goToPrev(){
