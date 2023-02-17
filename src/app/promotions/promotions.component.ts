@@ -27,6 +27,11 @@ export class PromotionsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProduct().subscribe(data => {
       this.products = data;
+      if(data.length <10){
+        this.productsService.getRandom(10-data.length).subscribe(data => {
+          this.products = [...this.products, ...data]
+        })
+      }
       this.nbSlide= Array(Math.trunc(this.products.length / this.items));
     });
   }

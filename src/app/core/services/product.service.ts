@@ -15,4 +15,7 @@ export class ProductService {
         return this.http.get<Product[]>(`${this._url}/promo`)
     }
     
+    getRandom(nb:number){
+        return this.http.get<Product[]>(`${this._url}/pagination?take=${nb}`)
+    }
 }
