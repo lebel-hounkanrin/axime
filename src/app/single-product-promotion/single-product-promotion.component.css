@@ -19,7 +19,10 @@
     color: #273c75;
     
 }
-
+.sup-total{
+    gap: 10%;
+    display: inline-flex;
+}
 .card-text{
     margin-left: 10px;
     color: black; 
