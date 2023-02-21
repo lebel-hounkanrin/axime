@@ -14,7 +14,11 @@ export class ProductService {
     getAllProduct(){
         return this.http.get<Product[]>(`${this._url}/promo`)
     }
-    
+
+    getRecommandationProduct(nb:number){
+        return this.http.get<Product[]>(`${this._url}/pagination?take=${nb}`)
+    }   
+
     getRandom(nb:number){
         return this.http.get<Product[]>(`${this._url}/pagination?take=${nb}`)
     }

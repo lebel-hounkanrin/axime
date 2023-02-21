@@ -26,7 +26,7 @@ export class RecommendationProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService.getAllProduct().subscribe(data => {
+    this.productsService.getRecommandationProduct(this.items).subscribe(data => {
       this.products = data;
       this.nbSlide= Array(Math.trunc(this.products.length / this.items));
     });
