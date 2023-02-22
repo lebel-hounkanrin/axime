@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
   showSocityName : boolean = false;
   piecedIdentiteMsg = "Une photo de votre piece d'identité";
   userLocalisation!: Blob;
+  passwordCtrl = new FormControl()
   constructor(
     private router: Router, private formBuilder: FormBuilder,
     private authService: AuthService, private http : HttpClient, private modalService: NgbModal) { }
@@ -44,7 +45,7 @@ export class RegistrationComponent implements OnInit {
       countryId: [Validators.required],
       phoneNumber: [null, Validators.required],
       proprietaireCtrl: [],
-      password: [null, Validators.required],
+      password: this.passwordCtrl,
       confirmPswd: [null, Validators.required],
       firstName: [null, Validators.required],
       lastName: [null],

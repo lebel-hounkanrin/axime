@@ -6,13 +6,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
+import { VerifyPasswordComponent } from './components/verify-password/verify-password.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegistrationComponent,
-    LogoutComponent
+    LogoutComponent,
+    VerifyPasswordComponent,
+
   ],
   imports: [
     CommonModule,

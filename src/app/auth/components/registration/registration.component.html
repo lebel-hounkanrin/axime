@@ -58,6 +58,7 @@
         </span>
         <p>{{piecedIdentiteMsg}}</p>
     </div-->
+    <app-verify-password [password]="passwordCtrl.value"></app-verify-password>
     <div >
         <button class="login-button" type="submit" (click)="onSubmitForm()" [disabled]="registrationForm.invalid">Créer mon compte</button>
     </div>
