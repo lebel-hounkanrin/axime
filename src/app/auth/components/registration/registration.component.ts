@@ -49,6 +49,7 @@ export class RegistrationComponent implements OnInit {
       confirmPswd: [null, Validators.required],
       firstName: [null, Validators.required],
       lastName: [null],
+      locationCtrl: [null],
     })
   }
 
@@ -60,7 +61,8 @@ export class RegistrationComponent implements OnInit {
     formData.append("password", this.registrationForm.get("password")?.value)
     formData.append("confirmPassword", this.registrationForm.get("confirmPswd")?.value)
     formData.append("firstName", this.registrationForm.get("firstName")?.value),
-    formData.append("lastName", this.registrationForm.get("lastName")?.value)
+    formData.append("lastName", this.registrationForm.get("lastName")?.value),
+    formData.append("location", this.registrationForm.get("locationCtrl")?.value)
     console.log(formData)
     this.authService.register(formData).subscribe(d => this.router.navigateByUrl("signin"));
     

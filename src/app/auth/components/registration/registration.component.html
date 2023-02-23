@@ -58,6 +58,12 @@
         </span>
         <p>{{piecedIdentiteMsg}}</p>
     </div-->
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="location" class="form-label">Votre localisation</label>
+            <textarea class="form-control" id="location" rows="3" formControlName="locationCtrl"></textarea>
+          </div>
+    </div>
     <app-verify-password [password]="passwordCtrl.value"></app-verify-password>
     <div >
         <button class="login-button" type="submit" (click)="onSubmitForm()" [disabled]="registrationForm.invalid">Créer mon compte</button>
