@@ -1,11 +1,11 @@
-FROM --platform=linux/amd64 node:latest as node
+FROM --platform=linux/amd64 node:19.7-slim as node
+RUN  apt-get update \
+  && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY ./achagro-web .
+COPY package.json .
 RUN npm install
+COPY . .
 RUN npm run build 
 EXPOSE 4200
-#CMD npm run build   
 
-FROM nginx:alpine
-COPY --from=node ./dist/achagro-web /usr/share/nginx/html
 

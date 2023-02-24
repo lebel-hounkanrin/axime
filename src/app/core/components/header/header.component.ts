@@ -26,6 +26,11 @@ export class HeaderComponent implements OnInit {
     ) { }
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products=products });
+    const elt1 = document.getElementById("d-btn");
+    const elt2 = document.getElementById("dropdown-action");
+    elt1?.addEventListener("mouseover", () => {
+      elt2?.click();
+    })
   }
 
   searchProduct(){

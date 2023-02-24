@@ -94,6 +94,18 @@ input:focus {
     font-weight: bold;
 }
 
+.account{
+  display: flex;
+  flex-direction: column;
+}
+.account-item{
+    display: none;
+    color: white;
+}
+#username{
+margin-top: 25px;
+color: white;
+}
 @media (max-width: 992px) {
     #searchbar{
         order: 2;
@@ -156,6 +168,24 @@ input:focus {
     background-color: #273c75;
     color: white;
 }
+#dropdown-action{
+    border: none;
+}
+.dropdown-menu{
+    padding-top: 10%;
+    text-align: justify;
+    height: 200px;
+    width: 250px;
+    font-size: large;
+}
 .dropdown-item{
+    margin-top: 10px;
     color: black!important;
+}
+.dropdown-item:hover{
+   background-color:  #b7babd;
+}
+.dropdown-toggle:hover {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close */
 }
