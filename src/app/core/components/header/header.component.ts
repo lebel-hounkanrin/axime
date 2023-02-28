@@ -7,6 +7,7 @@ import { selectStocks } from 'src/app/products/store/stocks.selector';
 import { select, Store } from '@ngrx/store';
 import { getProductByTagAPI, invokeMoreStocksAPI } from 'src/app/products/store/stocks.action';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 
 @Component({
@@ -15,14 +16,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  userIsConnected = false;
+  currentUser:any = {};
   products!: Product[];
   tag: string = "";
   stocks$ = this.store.pipe(select(selectStocks));
   constructor(
     @Inject(BASKET_STORE) readonly basketStore: BasketStore,
-    private stocksService: StocksService,
-    private store: Store
+    private store: Store,
+    private readonly authService: AuthService
     ) { }
   ngOnInit(): void {
     this.basketStore.products$.subscribe((products: Product[]) => { this.products=products });
@@ -30,7 +32,14 @@ export class HeaderComponent implements OnInit {
     const elt2 = document.getElementById("dropdown-action");
     elt1?.addEventListener("mouseover", () => {
       elt2?.click();
-    })
+    });
+    if (this.authService.accessTokenValue) {
+      this.userIsConnected = true;
+      const userInfo = localStorage.getItem("currentUser");
+      if(userInfo){
+        this.currentUser = JSON.parse(userInfo);
+      }
+    }
   }
 
   searchProduct(){
