@@ -97,9 +97,12 @@ input:focus {
 .account{
   display: flex;
   flex-direction: column;
+  gap: 50%;
+}
+.hello{
+    font-size: 10px;
 }
 .account-item{
-    display: none;
     color: white;
 }
 #username{

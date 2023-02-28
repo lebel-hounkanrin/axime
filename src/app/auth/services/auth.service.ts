@@ -9,8 +9,8 @@ export class AuthService {
     private url = environment.baseApiUrl;
     private accessTokenSubject = new BehaviorSubject(null);
     constructor(private http : HttpClient){
-        if(localStorage.getItem("access_token") !== null){
-            this.accessTokenSubject = new BehaviorSubject<any>(localStorage.getItem("access_token"))   
+        if(localStorage.getItem("accessToken") !== null){
+            this.accessTokenSubject = new BehaviorSubject<any>(localStorage.getItem("accessToken"))   
         }
     }
 
@@ -25,7 +25,7 @@ export class AuthService {
     login(userInput: any): Observable<any>{
         return this.http.post<any>(`${this.url}/auth/login`, userInput).pipe(
             map(userInfo => {
-                localStorage.setItem("access_token", userInfo["access_token"]);
+                localStorage.setItem("accessToken", userInfo["accessToken"]);
                 this.accessTokenSubject.next(userInfo);
             })
         )
