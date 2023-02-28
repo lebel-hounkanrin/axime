@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RecordVoiceComponent } from 'src/app/record-voice/record-voice.component';
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+
 
 @Component({
   selector: 'app-registration',
@@ -13,6 +15,7 @@ import { RecordVoiceComponent } from 'src/app/record-voice/record-voice.componen
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  countryFlag: {[code: number]: string}[] = []
   registrationForm! : FormGroup;
   showUserName : boolean =false;
   showSocityName : boolean = false;
@@ -25,6 +28,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.initRegistrationForm();
+    this.getCountry()
     this.registrationForm.get("proprietaireCtrl")?.valueChanges.pipe(
       tap((val) => {
         if(val === "restaurant" || val === "comerçant"){
@@ -105,5 +109,19 @@ export class RegistrationComponent implements OnInit {
       })
       */
     })
-}
+  }
+
+  getCountry(){
+    this.countryFlag.push({229: getUnicodeFlagIcon("BJ")})
+    this.countryFlag.push({221: getUnicodeFlagIcon("SN")})
+    this.countryFlag.push({225: getUnicodeFlagIcon("CI")})
+    //this.countryFlag.push({227: getUnicodeFlagIcon("NE")})
+    this.countryFlag.push({228: getUnicodeFlagIcon("TG")})
+    this.countryFlag.push({234: getUnicodeFlagIcon("NG")})
+    return this.countryFlag
+  }
+
+  getFlag(c: any){
+    return `${Object.values(c)[0]}`
+  }
 }

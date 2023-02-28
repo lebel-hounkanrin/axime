@@ -1,19 +1,16 @@
 <div class="form" [formGroup]="registrationForm">
     <h3 class="logo" > Inscription </h3>
-    <div class="form-group">
-        <label for="numero">Numéro de telephone</label>
-        <div class="country-options">
+    <div class="country-form">
+        <div class="form-group country-form1">
+            <label for="country">Pays *</label>
             <select name="pays" id="id" formControlName="countryId">
-                <option value="benin">(00229)</option>
-                <option value="civ" >(00225)</option>
-                <option value="civ" >(00226)</option>
-                <option value="civ" >(00227)</option>
-                <option value="civ" >(00228)</option>
-                <option value="civ" >(00221)</option>
+                <option value="benin" class="country-flag" *ngFor="let c of countryFlag">{{getFlag(c)}}</option>
             </select>
+        </div>
+        <div class="form-group country-form2">
+            <label for="numero">Numéro de telephone *</label>
             <input type="tel" id="numero" formControlName="phoneNumber">
         </div>
-        <div class="error" *ngIf="registrationForm.controls['phoneNumber'].invalid && (registrationForm.controls['phoneNumber'].dirty || registrationForm.controls['phoneNumber'].touched)" >Entrez un numéro de téléphone valide</div>
     </div>
     <div class="form-group">
         <label for="proprietaire">Vous êtes un(e) ?</label>

@@ -10,7 +10,6 @@ export class StocksService{
     take = 10;
     skip=0;
     get(){
-        console.log('url =>>>>', this._url)
        return this.http.get<Product[]>(`${this._url}/products/pagination?take=${this.take}`);
     }
     getMoreProducts(){
@@ -23,7 +22,7 @@ export class StocksService{
     }
 
     getProductsByTag(tag_name: string){
-        return this.http.get<Product[]>(`${this._url}/stock/tag?tag_name=${tag_name}`)
+        return this.http.get<Product[]>(`${this._url}/products/search?productName=${tag_name}`)
     }
     getRandom(){
         return this.http.get<Product[]>(`${this._url}/stock/4`);
