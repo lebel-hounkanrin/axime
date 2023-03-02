@@ -42,12 +42,12 @@
     </div>
     <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" value="passwordpassword" formControlName="password">
+        <input type="password" id="password" placeholder="********" formControlName="password">
         <div class="error" *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)">Entrez un mot de passe </div>
     </div>
     <div class="form-group">
         <label for="confirm-password">Confirmer votre mot de passe</label>
-        <input type="password" id="confirm-password" value="passwordpassword" formControlName="confirmPswd">
+        <input type="password" id="confirm-password" placeholder="********" formControlName="confirmPswd">
         <div class="error" *ngIf="registrationForm.controls['confirmPswd'].invalid && (registrationForm.controls['confirmPswd'].dirty || registrationForm.controls['confirmPswd'].touched)">Entrez votre mot de passe</div>
     </div>
     <!--div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
@@ -63,13 +63,14 @@
     </div>
     <app-verify-password [password]="passwordCtrl.value"></app-verify-password>
     <div >
-        <button class="login-button" type="submit" (click)="onSubmitForm()" [disabled]="registrationForm.invalid">Créer mon compte</button>
+        <button class="login-button" type="submit" (click)="onSubmitForm()">Créer mon compte</button>
+        <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
     </div>
 </div>
-<div class="registration-card">
+<!--div class="registration-card">
     <div class="button-group">
         <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
         <button class="registration-button" (click)="goToHome()">Retourner à l'acceuil</button>
     </div>
-</div>
+</div-->
 

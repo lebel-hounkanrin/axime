@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -7,13 +7,16 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './logout.component.html',
   styleUrls: ['./logout.component.css']
 })
-export class LogoutComponent implements OnInit {
+export class LogoutComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.authService.logout();
-    this.router.navigateByUrl("")
+    this.router.navigateByUrl("");
+  }
+  ngOnDestroy(): void {
+      window.location.reload()
   }
 
 }

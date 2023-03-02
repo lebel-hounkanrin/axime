@@ -61,7 +61,7 @@ label{
 button{
     padding: 5px;
     border-radius: 5px;
-    height: 40px;
+    height: 50px;
 }
 .login-button{
     background-color: #273c75;
@@ -163,6 +163,10 @@ h4{
     width: 20%;
     margin-right: 5px;
 }
+input, textarea, option, select{
+    border: 1px solid #dfe6e9!important;
+    background-color: white;
+}
 .country-options input{
     width: 66%;
 }
@@ -177,8 +181,12 @@ h4{
     width: 30%!important;
 }
 .country-form2{
-    width: 65%!important;
+    width: 66%!important;
 
+}
+.country-flag{
+    text-align: center;
+    font-size: 25px;
 }
 @media (min-width: 768px) and (max-width:1200px){
     .form {
