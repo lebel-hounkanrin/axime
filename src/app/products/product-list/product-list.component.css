@@ -4,7 +4,8 @@
     width: 100%;
     margin-right: 0;
     padding-right: 0;
-    background-color: #f6f8fa;
+    background-color: #F2F3F5;
+    padding-top: 20px;
 }
 .pub-component{
     width: 25%;
@@ -29,6 +30,10 @@
     color: white;
     border: 1px solid #273c75 ;
     background-color: #273c75;
+}
+.getMore{
+    background-color: #F2F3F5;
+    padding-bottom: 50px;
 }
 @media (max-width: 768px){
     .product-list{
