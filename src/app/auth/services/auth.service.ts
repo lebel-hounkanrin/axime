@@ -10,7 +10,8 @@ export class AuthService {
     private userSubject = new BehaviorSubject(null);
     constructor(private http : HttpClient){
         if(localStorage.getItem("accessToken") !== null){
-            this.userSubject = new BehaviorSubject<any>(localStorage.getItem("accessToken"))   
+            this.userSubject = new BehaviorSubject<any>(localStorage.getItem("accessToken"));
+            console.log("acces Token ", this.userSubject.value)
         }
     }
 
@@ -25,7 +26,7 @@ export class AuthService {
     login(userInput: any) {
         return this.http.post<any>(`${this.url}/auth/login`, userInput, { withCredentials: true })
             .pipe(map(res => {
-                this.userSubject.next(res.user);
+                this.userSubject.next(res.accessToken);
                 localStorage.setItem("accessToken", res.accessToken);
                 localStorage.setItem("refreshToken", res.refreshToken);
                 localStorage.setItem("currentUser", JSON.stringify(res.user));
@@ -37,13 +38,15 @@ export class AuthService {
 
     refreshToken() {
         const refreshToken = localStorage.getItem("refreshToken");
-        console.log(refreshToken)
         return this.http.post<any>(`${this.url}/auth/refresh-token`, {refreshToken: refreshToken}, { withCredentials: true })
             .pipe(
-                map((user) => {
-                this.userSubject.next(user);
+                map((res) => {
+                    this.userSubject.next(res.accessToken);
+                    localStorage.setItem("accessToken", res.accessToken);
+                    localStorage.setItem("refreshToken", res.refreshToken);
+                    localStorage.setItem("currentUser", JSON.stringify(res.user));
                 //this.startRefreshTokenTimer();
-                return user;
+                return res.user;
             })
             );
     }

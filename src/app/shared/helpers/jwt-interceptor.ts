@@ -9,12 +9,11 @@ import { environment } from 'src/environments/environment';
 export class JwtInterceptor implements HttpInterceptor{
     constructor( private authService: AuthService){}
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const user = this.authService.accessTokenValue;
-        const isLoggedIn = user?.jwtToken;
+        const accessTokenValue = this.authService.accessTokenValue;
         const isApiUrl = req.url.startsWith(environment.baseApiUrl);
-        if (isLoggedIn && isApiUrl) {
+        if (accessTokenValue && isApiUrl) {
             req = req.clone({
-                setHeaders: { Authorization: `Bearer ${user.jwtToken}` }
+                setHeaders: { Authorization: `Bearer ${accessTokenValue}` }
             });
         }
 
