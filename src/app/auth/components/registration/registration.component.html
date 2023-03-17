@@ -25,6 +25,10 @@
         <label for="record-voice">Indiquer votre localisation</label>
         <button class="btn record-btn" (click)="startRecording()"><i class="bi bi-mic"></i></button>
     </div-->
+    <div class="form-group">
+        <label for="firstName">Vous aviez un code promo ?</label>
+        <input type="text" id="codePromo" formControlName="promoCode">
+    </div>
     <div class="form-group" *ngIf="showUserName">
         <label for="firstName">Nom</label>
         <input type="text" id="firstName" formControlName="firstName">

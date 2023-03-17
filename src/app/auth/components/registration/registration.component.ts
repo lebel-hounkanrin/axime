@@ -54,6 +54,7 @@ export class RegistrationComponent implements OnInit {
       firstName: [null, Validators.required],
       lastName: [null],
       locationCtrl: [null],
+      promoCode: [""]
     })
   }
 
@@ -67,7 +68,8 @@ export class RegistrationComponent implements OnInit {
     formData.append("firstName", this.registrationForm.get("firstName")?.value),
     formData.append("lastName", this.registrationForm.get("lastName")?.value),
     formData.append("location", this.registrationForm.get("locationCtrl")?.value)
-    console.log(formData)
+    formData.append("promoCode", this.registrationForm.get("promoCode")?.value)
+
     this.authService.register(formData).subscribe(d => this.router.navigateByUrl("signin"));
     
 }
