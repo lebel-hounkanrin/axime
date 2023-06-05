@@ -1,0 +1,131 @@
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+.articles {
+    width: 90%;
+}
+.articles-panier-container{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.allproducts{
+    width: 75%;
+}
+.price-side-nav{
+    width: 25%;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column  ;
+    gap: 5px;
+    margin-right: 20px;;
+}
+.total-price{
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+}
+.back-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.card-btn{
+    border: 2px solid #273c75;
+    color: white;
+    background-color: #273c75;
+    border-radius: 20px;
+    font-size: 0.8em;
+    padding: 8px;
+    position: absolute;
+    bottom:15px;
+    left:40px;
+    right: 40px;
+}
+.card-btn:hover{
+    color: white;
+    border: 2px solid #142c6e;
+    background-color: #142c6e;
+
+}
+.price{
+    color: red;
+    font-weight: 700;
+}
+
+.total-price span {
+    color: red;
+    font-weight: 700;
+    position: absolute;
+    right: 10px
+}
+.banner{
+    margin-top: 3px;
+    margin-bottom: 25px;
+    width: 90%;
+    height: 50px;
+    background-color: #fafafa;
+}
+.articles-img{
+    width: 150px;
+    height: 150px;
+}
+.card-link{
+    display: flex;
+    justify-content: flex-end;
+    width: inherit;
+    margin-right: 0px;
+}
+.quantityInput{
+    width: 50px;
+    margin-left: 50px;
+}
+
+.removeArticleLink{
+    color: #878787;
+    text-decoration: none;
+}
+
+
+.back-button{
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 85%;
+    color: #273c75;
+    background-color: white;
+    border-color: #273c75;
+    border: 1px solid #273c75;
+    border-radius: 20px;
+    font-size: 0.8em;
+    padding: 8px;
+}
+.back-button:hover{
+    color: white;
+    background-color: #273c75;
+    border-color: white;
+}
+
+@media (min-width: 768px) and (max-width:992px){
+    .articles-panier-container{
+        margin-left: 10px;
+    }
+    .items{
+        width: 30%;
+        font-size: 0.8em;
+    }
+    .btn{
+        margin-left: 50%;
+    }
+}
+
+@media  (min-width:992px){
+    .articles-panier-container{
+        margin-left: 10px;
+    }
+}
+
+

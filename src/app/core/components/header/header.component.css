@@ -1,0 +1,194 @@
+.header {
+    display: flex;
+    background-color: #273c75; 
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.0em;
+}
+
+#searchbar{
+    display: flex;
+    padding: 10px;
+    width: calc(80% - 250px) ;
+    height: 64.5px;
+    border: none;
+    font-size: 1em;
+}
+
+#searchbar button {
+    height: 40px;
+    background-color: white;
+    border-left: none;
+    padding-left: O ;
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid black;
+    border-left: none;
+}
+
+#searchbar button:hover{
+    background-color: #d1d8e0;
+ }
+
+input {
+    padding: 10px;
+    width: 100%;
+    height: 90%;
+    border: 1px solid black;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0;
+    border-right: none;
+}
+input:focus {
+    outline: none;
+}
+.header-title{
+    cursor: pointer;
+    color: white;
+    margin-left: 15px;
+}
+.header-link{
+   display: flex;
+   justify-content: space-between; 
+   margin-right: 20px;
+}
+#header-link-elt-1 {
+    margin-right: 20px;
+}
+
+#header-link-elt-2 {
+    margin-left: 50px;
+    position: relative;
+}
+
+.bi-search{
+   font-size: 21px;
+}
+
+.bi-cart3{
+    font-size: 28px;
+    color: white;
+}
+
+.bi-person{
+    font-size: 29px;
+    color: white;
+}
+.article-counter{
+    background-color: #e23a05;
+    border-radius: 60%;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    left: -5px;
+    top: 15px;
+    font-weight: bold;
+}
+
+.account{
+  display: flex;
+  flex-direction: column;
+  gap: 50%;
+}
+.hello{
+    font-size: 10px;
+}
+.account-item{
+    color: white;
+}
+#username{
+margin-top: 25px;
+color: white;
+}
+@media (max-width: 992px) {
+    #searchbar{
+        order: 2;
+        width: 100%;
+        margin-left: 0;
+    }
+    .icon-text{
+        width: 0;
+        display: none;
+    }
+    .header{
+        padding-top: 10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        height: min-content;
+    }
+    .header-title{
+        order: 0;
+        width: 50%;
+        margin-left: 5px;
+        font-size: medium;
+    }
+    .header-link{
+        order: 1;
+        margin-right: 0;
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #header-link-elt-1 {
+        margin-left: 25%;
+        margin-right: 0;
+        width: 50%;
+        text-align: right;
+    }
+    #header-link-elt-2 {
+        margin-left: 5%;
+        width: 10%;
+        text-align: right;
+    }
+
+    .bi-search{
+        font-size: 11px;
+     }
+     
+     .bi-cart3{
+        margin-right: 0;
+         font-size: 18px;
+         color: white;
+     }
+     
+     .bi-person{
+         font-size: 19px;
+         color: white;
+     }
+}
+
+#header-link-elt-1 button {
+    background-color: #273c75;
+    color: white;
+}
+#dropdown-action{
+    border: none;
+}
+.dropdown-menu{
+    padding-top: 10%;
+    text-align: justify;
+    height: 200px;
+    width: 250px;
+    font-size: large;
+}
+.dropdown-item{
+    margin-top: 10px;
+    color: black!important;
+}
+.dropdown-item:hover{
+   background-color:  #b7babd;
+}
+.dropdown-toggle:hover {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close */
+}
