@@ -1,0 +1,48 @@
+<div class="header">
+    <h1 class="header-title" (click)="goBackHome()">Achagro</h1>
+    <div id="searchbar">
+        <input type="text" placeholder="Qu'est ce qui vous ferait plaisir ?" [(ngModel)]="tag">
+        <button class="btn" (click)="searchProduct()"><i class="bi bi-search"></i></button>
+    </div>
+    <div class="header-link">
+
+            <div class="" id="header-link-elt-1" *ngIf="userIsConnected">
+                <div class="btn-group" >
+                    <div class="account">
+                        <span class="account-item" id="d-btn">Compte</span>
+                        <span class="account-item"><span class="hello">Bonjour</span> {{currentUser.firstName}}</span>
+                    </div>
+                    <button type="" class="btn dropdown-toggle dropdown-toggle-split" id="dropdown-action" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="">Mes commandes</a></li>
+                    <li><a class="dropdown-item" routerLink="">Informations personnelles</a></li>
+                    <li><a class="dropdown-item" routerLink="signout">Se déconnecter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="" id="header-link-elt-1" *ngIf="!userIsConnected">
+            <div class="btn-group" >
+                <div class="account">
+                    <span class="account-item" id="d-btn">Compte</span>
+                </div>
+                <button type="" class="btn dropdown-toggle dropdown-toggle-split" id="dropdown-action" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="signup">S'inscrire</a></li>
+                <li><a class="dropdown-item" routerLink="signin">Se connecter</a></li>
+            </ul>
+        </div>
+    </div>
+
+        <div id="header-link-elt-2">
+            <span class="article-counter" *ngIf="products.length>0">{{products.length}}</span>
+            <a routerLink="panier"> <i class="bi bi-cart3"></i><span class="icon-text">Panier</span></a>
+        </div>
+    </div>
+</div>

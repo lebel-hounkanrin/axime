@@ -1,0 +1,225 @@
+*{
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-left: 155px;
+    color: #273c75;
+    font-size: 30px;
+}
+
+.form {
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 10px;
+    width: 30%;
+    border: none;
+    padding: 20px 0px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    
+}
+input, button, select{
+    width: 90%;
+    margin: 0 20px 20px;
+}
+textarea{
+    width: 90%;
+    margin: 0 20px 20px;
+    border: 1px solid #b6c2cd;
+    background-color: #EFEFEF;
+    outline: 0;
+    margin-left: 25px;
+    border-radius: 5px;
+}
+input, select{
+    border: 1px solid #b6c2cd;
+    background-color: #EFEFEF;
+    outline: 0;
+    height: 40px;
+    margin-left: 25px;
+    border-radius: 5px;
+}
+input:hover, select:hover{
+    outline: #273c75;
+    border: 1px solid #273c75;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+label{
+  margin-left: 25px;
+  color: #273c75;
+}
+button{
+    padding: 5px;
+    border-radius: 5px;
+    height: 50px;
+}
+.login-button{
+    background-color: #273c75;
+    color: white;
+    border: none;
+}
+
+.login-button:hover{
+    background-color: rgba(39, 60, 117,0.40);
+    color: white;
+    border: none;
+}
+
+
+.registration-button {
+    color: #273c75;
+    background-color: white;
+    border-color: #273c75;
+    border: 1px solid #273c75;
+}
+
+.registration-button:hover {
+    color: white;
+    background-color: #273c75;
+    border-color: white;
+}
+
+p {
+    
+    margin-right: 10px;
+}
+.registration-card{
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 10px ; 
+    width: 30%;
+    border: none;
+    padding: 5px 0px;
+}
+
+h4{
+    margin-left: 25px;
+    font-size: 18px;
+}
+
+.drop{
+    margin: 30px auto 40px;
+    width: 400px;
+    height: 200px;
+    border: 5px dashed #273c75;
+    border-radius: 10%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.drop:hover{
+    border: 5px dashed rgb(231, 223, 223);
+}
+.drop p{
+    color: #273c75;
+}
+.drop i {
+    margin: auto;
+    font-size: 50px;
+    color: #273c75;
+}
+.drop-button{
+    padding-bottom: 10px;
+    width: 70px;
+    margin-top: 40px;
+}
+.country-options{
+    display: flex;
+}
+.country-options select {
+    width: 20%;
+    margin-right: 5px;
+}
+.country-options input{
+    width: 66%;
+}
+.button-group{
+    padding-top: 20px;
+}
+.error{
+    color: red;
+    font-size: small;
+    margin-left: 25px;
+    margin-top: 0;
+}
+
+.country-options{
+    display: flex;
+}
+.country-options select {
+    width: 20%;
+    margin-right: 5px;
+}
+input, textarea, option, select{
+    border: 1px solid #dfe6e9!important;
+    background-color: white;
+}
+.country-options input{
+    width: 66%;
+}
+.button-group{
+    padding-top: 5px;
+}
+.country-form{
+    display: flex;
+    width: 100%;
+}
+.country-form1{
+    width: 30%!important;
+}
+.country-form2{
+    width: 66%!important;
+
+}
+.country-flag{
+    text-align: center;
+    font-size: 25px;
+}
+@media (min-width: 768px) and (max-width:1200px){
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 60%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 60%;
+    }
+}
+
+@media (max-width:992px){
+    .logo{
+        width: inherit;
+        margin-left: auto;
+    }
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 90%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 90%;
+    }
+}

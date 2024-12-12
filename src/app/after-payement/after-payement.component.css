@@ -1,0 +1,34 @@
+.card-box{
+    width: 50%;
+    margin: 50px auto;
+}
+.form-group{
+    display: flex;
+    margin: 5px;
+}
+label{
+    margin-left: 5px;
+}
+h4{
+    padding-top: 10px;
+    text-align: center;
+}
+.displayMsg{
+  margin-left: 20px;
+  color: #273c75;
+}
+.card-btn{
+    margin-top: 50px;
+    border: 2px solid #273c75;
+    color: white;
+    background-color: #273c75;
+    border-radius: 20px;
+    font-size: 0.8em;
+    padding: 8px;
+    position:relative;
+    margin-top: 10px;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    width: 50%;
+
+}

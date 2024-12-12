@@ -1,0 +1,166 @@
+.form {
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 10px;
+    width: 30%;
+    border: none;
+    padding: 50px 0px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    
+}
+input, button{
+    width: 90%;
+    margin: 0 20px 20px;
+}
+input, select{
+    border: 1px solid #dfe6e9!important;
+    background-color: #fff!important;
+    outline: 0;
+    height:40px;
+    margin-left: 25px;
+    border-radius: 5px;
+}
+input:hover, select:hover{
+    outline: #273c75;
+    border: 1px solid #273c75;
+}
+label{
+  margin-left: 25px;
+}
+button{
+    padding: 5px;
+    border-radius: 5px;
+    height: 50px;
+}
+.login-button{
+    background-color: #273c75;
+    color: white;
+    border: none;
+    margin-left: 25px;
+}
+
+.login-button:hover{
+    background-color: rgba(39, 60, 117,0.40);
+    color: white;
+    border: none;
+}
+.registration-button {
+    color: #273c75;
+    background-color: white;
+    border-color: #273c75;
+    border: 1px solid #273c75;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.registration-button:hover {
+    color: white;
+    background-color: #273c75;
+    border-color: white;
+}
+p {
+    text-align: right;
+    margin-right: 10px;
+}
+label{
+    color: #273c75;
+    
+}
+.registration-card{
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 50px ; 
+    width: 30%;
+    padding: 10px 0px;
+}
+h4{
+    margin-left: 25px;
+}
+.logo {
+    width: inherit;
+    margin: 0 auto 30px;
+    color: #273c75;
+    font-size: 30px;
+}
+.country-options{
+    display: flex;
+}
+.country-options select {
+    width: 20%;
+    margin-right: 5px;
+}
+.country-options input{
+    width: 66%;
+}
+p a {
+    color: #273c75;
+    margin-right: 15px;
+}
+.button-group{
+    padding-top: 15px;
+}
+.country-form{
+    display: flex;
+    width: 100%;
+}
+.country-form1{
+    width: 30%!important;
+}
+.country-form2{
+    width: 66%!important;
+
+}
+.country-flag{
+    text-align: center;
+    font-size: 25px;
+}
+select{
+    font-size: 25px;
+
+}
+
+@media (min-width: 768px) and (max-width:1200px){
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 60%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 60%;
+    }
+}
+
+@media (max-width:992px){
+    .country-options select {
+        width: 40%;
+    }
+    .country-options input{
+        width: 60%;
+        margin-right: 6px;
+    }
+    .form {
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 10px;
+        width: 90%;
+        border: none;
+        padding: 50px 0px;
+    }
+    .registration-card{
+        width: 90%;
+    }
+}

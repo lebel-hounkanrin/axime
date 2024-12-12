@@ -1,0 +1,80 @@
+<div class="form" [formGroup]="registrationForm">
+    <h3 class="logo" > Inscription </h3>
+    <div class="country-form">
+        <div class="form-group country-form1">
+            <label for="country">Pays *</label>
+            <select name="pays" id="id" formControlName="countryId">
+                <option value="benin" class="country-flag" *ngFor="let c of countryFlag">{{getFlag(c)}}</option>
+            </select>
+        </div>
+        <div class="form-group country-form2">
+            <label for="numero">Numéro de telephone *</label>
+            <input type="tel" id="numero" formControlName="phoneNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="proprietaire">Vous êtes un(e) ?</label>
+        <select name="proprietaire" id="proprietaire" formControlName="proprietaireCtrl">
+            <option value="particulier">Particulier</option>
+            <option value="restaurant" >Restaurant</option>
+            <option value="comerçant" >Commerçant</option>
+        </select>
+        <div class="error" *ngIf="registrationForm.controls['proprietaireCtrl'].invalid && (registrationForm.controls['proprietaireCtrl'].dirty || registrationForm.controls['proprietaireCtrl'].touched)">Choisir un statut</div>
+    </div>
+    <!--div class="form-group">
+        <label for="record-voice">Indiquer votre localisation</label>
+        <button class="btn record-btn" (click)="startRecording()"><i class="bi bi-mic"></i></button>
+    </div-->
+    <div class="form-group">
+        <label for="firstName">Vous aviez un code promo ?</label>
+        <input type="text" id="codePromo" formControlName="promoCode">
+    </div>
+    <div class="form-group" *ngIf="showUserName">
+        <label for="firstName">Nom</label>
+        <input type="text" id="firstName" formControlName="firstName">
+        <div class="error" *ngIf="registrationForm.controls['firstName'].invalid && (registrationForm.controls['firstName'].dirty || registrationForm.controls['firstName'].touched)">Entrez votre nom</div>
+    </div>
+    <div class="form-group" *ngIf="showUserName">
+        <label for="lastName">Prénom</label>
+        <input type="text" id="lastName" formControlName="lastName">
+        <div class="error" *ngIf="registrationForm.controls['lastName'].invalid && (registrationForm.controls['lastName'].dirty || registrationForm.controls['lastName'].touched)">Entrez votre prénom</div>
+    </div>
+    <div class="form-group" *ngIf="showSocityName">
+        <label for="socityName">Nom d'Établissement / Société</label>
+        <input type="text" id="socityName" formControlName="firstName">
+        <div class="error" *ngIf="registrationForm.controls['firstName'].invalid && (registrationForm.controls['firstName'].dirty || registrationForm.controls['firstName'].touched)">Entrez votre nom</div>
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="********" formControlName="password">
+        <div class="error" *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)">Entrez un mot de passe </div>
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Confirmer votre mot de passe</label>
+        <input type="password" id="confirm-password" placeholder="********" formControlName="confirmPswd">
+        <div class="error" *ngIf="registrationForm.controls['confirmPswd'].invalid && (registrationForm.controls['confirmPswd'].dirty || registrationForm.controls['confirmPswd'].touched)">Entrez votre mot de passe</div>
+    </div>
+    <!--div class="drop" (dragover)="dragOverHandler($event)" (drop)="displayElt($event)">
+        <span class="drop-button"><i class="bi bi-download"></i>
+        </span>
+        <p>{{piecedIdentiteMsg}}</p>
+    </div-->
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="location" class="form-label">Votre localisation</label>
+            <textarea class="form-control" id="location" rows="3" formControlName="locationCtrl"></textarea>
+          </div>
+    </div>
+    <app-verify-password [password]="passwordCtrl.value"></app-verify-password>
+    <div >
+        <button class="login-button" type="submit" (click)="onSubmitForm()">Créer mon compte</button>
+        <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
+    </div>
+</div>
+<!--div class="registration-card">
+    <div class="button-group">
+        <button class="registration-button" (click)="goToLoginPage()">Se connecter</button>
+        <button class="registration-button" (click)="goToHome()">Retourner à l'acceuil</button>
+    </div>
+</div-->
+

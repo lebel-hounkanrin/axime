@@ -1,0 +1,15 @@
+<div class="card" >
+    <div class="card-img" *ngIf="product.productImage">
+      <img *ngIf="product.productImage" [src]="baseImageUrl+product.productImage" class="card-img img-tag" alt="...">
+    </div>
+        <h3 class="card-title">{{product.name}}</h3>
+        <p class="card-text text-description">{{product.description}}</p>
+        <p class="card-text price pb-2">
+          <span class="sup-total">
+            <span *ngIf="product.discount" class="product-price">{{product.sell_price}} FCFA</span>
+            <span *ngIf="!product.discount">{{product.sell_price}} FCFA</span>
+            <span *ngIf="product.discount" class="discount-price">{{product.sell_price - (product.sell_price * product.discount)/100}} FCFA</span>
+          </span>
+          <span><button class="addProductBtn" (click)="addProductToBasket(product)">Ajouter au panier</button></span>  
+        </p> 
+    </div>

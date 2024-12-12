@@ -1,0 +1,8 @@
+<div class="publicite">
+    <!--app-publicite class="pub-component"></app-publicite-->
+    <div class="product-list">
+        <app-single-product *ngFor="let product of products" [product]="product"
+        class="items"></app-single-product>
+    </div>
+</div>
+<div class="getMore"><button class="btn" (click)="getMore()">Voir plus d'articles</button></div>
